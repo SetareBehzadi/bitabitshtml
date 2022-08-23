@@ -1,0 +1,15 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                               FUNCTION:  PX to VIEWPORT SIZE                               */
+/* ------------------------------------------------------------------------------------------ */
+
+/* ------------------------------------  VIEWPORT WIDTH  ------------------------------------ */
+@function get-vw($target) {
+	$vw-context: ($viewport-basis-width * .01) * 1px;
+	@return ($target / $vw-context) * 1vw;
+}
+
+/* ------------------------------------ VIEWPORT  HEIGHT ------------------------------------ */
+@function get-vh($target) {
+	$vh-context: ($viewport-basis-height * .01) * 1px;
+	@return ($target / $vh-context) * 1vh;
+}

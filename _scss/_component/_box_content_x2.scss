@@ -1,0 +1,123 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  TABLE                                          */
+/* ------------------------------------------------------------------------------------------ */
+.box-content-x2 {
+	._container {
+		max-width: 1196px !important;
+    margin: auto;
+	}
+	._title {
+		text-align: center;
+		h2 {
+			color: #01373E;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 50%;
+				width: 70px;
+				height: 2px;
+				background-color: $thirdColor;
+				display: inline-block;
+				transform: translate(50%, 40px);
+			}
+		}
+		h4 {
+			color: #F1F1F1;
+			font-size: 55px;
+			font-family: 'Bold';
+			margin-top: -34px;
+			letter-spacing: -4px;
+		}
+	}
+	._box {
+		 padding: 0 5px;
+		 margin-top: 74px;
+	}
+	._item {
+		padding: 29px 19px 98px 19px ;
+		@include box-shadow-five;
+		background-color: #fff;
+		border-radius: 15px;
+		background-image: url('../media/cp-img/Intersection.png');
+		background-repeat: no-repeat;
+		background-position-y: 101.5%;
+    background-position-x: center;
+    background-size: 101.1%;
+		._det {
+			display: flex;
+			align-items: self-start;
+			img {
+				margin-left: 15px;
+			}
+			.name {
+				font-size: 26px;
+				font-family: "Extra Bold";
+				display: block;
+				color: #495057;
+			}
+			.name-fa {
+				font-size: 17px;
+				color: #BEBEBE;
+			}
+		}
+		._price {
+			letter-spacing: 1px;
+		}
+		._sals {
+			margin-top: 19px;
+			display: flex;
+			justify-content: space-between;
+			._price {
+				color: $secondaryColor;
+			}
+		}
+		._buy {
+			margin-top: 5px;
+	    margin-bottom: 12px;
+			display: flex;
+			justify-content: space-between;
+			._price {
+				color: $forthColor;
+			}
+		}
+		a {
+			margin-left: 0 !important;
+			margin: auto;
+		}
+	}
+}
+
+@media (max-width:1119px) {
+	.box-content-x2 {
+		._item {
+			 padding: 29px 16px 84px 16px;
+			 ._det {
+				 .name {
+						 font-size: 22px;
+				 }
+				 .name-fa {
+						 font-size: 15px;
+				 }
+			 }
+			 ._sals {
+			    font-size: 13px;
+			}
+			._buy {
+			    font-size: 13px;
+			}
+		}
+	}
+}
+
+@media (max-width:1023px) {
+	.box-content-x2 {
+
+	}
+}
+@media (max-width:767px) {
+	.box-content-x2 {
+
+	}
+}

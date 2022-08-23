@@ -1,0 +1,642 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                     HELPER:  DIMENSION                                     */
+/* ------------------------------------------------------------------------------------------ */
+
+.heightFull {
+	height: 100% !important;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                     HELPER: TYPOGRAPHY                                     */
+/* ------------------------------------------------------------------------------------------ */
+
+.fontLight { font-family: "Light" !important }
+.fontNormal { font-family: "Regular" !important }
+.fontBold { font-family: "Bold" !important }
+
+
+.fontLightTwo { font-family: "SHABNAM LIGHT" !important }
+.fontNormalTwo { font-family: "SHABNAM REGULAR" !important }
+.fontBoldTwo { font-family: "SHABNAM BOLD" !important }
+
+.fontSize10 { font-size: 10px }
+.fontSize11 { font-size: 11px }
+.fontSize12 { font-size: 12px }
+.fontSize13 { font-size: 13px }
+.fontSize14 { font-size: 14px }
+.fontSize15 { font-size: 15px }
+.fontSize16 { font-size: 16px }
+.fontSize17 { font-size: 17px }
+.fontSize18 { font-size: 18px }
+.fontSize19 { font-size: 19px }
+.fontSize20 { font-size: 20px }
+.fontSize21 { font-size: 21px }
+.fontSize22 { font-size: 22px }
+.fontSize23 { font-size: 23px }
+.fontSize24 { font-size: 24px }
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	display: block;
+	line-height: if($dir, 27px, 24px);
+	font-family: "Bold"
+}
+
+@each $name, $color in (
+	Primary: $primaryColor,
+	Secondary: $secondaryColor,
+	Info: $infoColor,
+	Error: $errorColor,
+	Warning: $warningColor,
+	Success: $successColor,
+	Light: $primaryEnColor,
+	Dark: $shadowColor,
+	Body: $txtBodyColor,
+	Head: $txtHeaderColor
+) {
+	.txtColor#{$name} { color: $color !important }
+	.bgColor#{$name} { background-color: $color !important }
+}
+
+@each $name, $align in (
+	Right: right,
+	Left: left,
+	Default: $default-side,
+	Opposite: $opposite-side,
+	Center: center,
+	Justify: justify
+) {
+	.txtAlign#{$name} {
+		text-align: $align !important
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                    HELPER:  SIMPLE LIST                                    */
+/* ------------------------------------------------------------------------------------------ */
+
+/* ---------- HORIZONTAL:  DEFAULT ---------- */
+.listHD {
+	display: flex;
+	margin: 0;
+
+	> li {
+		list-style: none outside;
+        position: relative;
+	}
+}
+
+/* ---------- HORIZONTAL: OPPOSITE ---------- */
+.listHO {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 0;
+
+	> li {
+		list-style: none outside;
+	}
+}
+
+/* ----------   HORIZONTAL: has child  custom this theme  ---------- */
+.listHD {
+	&._child {
+		justify-content:flex-end;
+		> li {
+			position: relative;
+			color: $linkColorHeader;
+			display: flex;
+			align-items: center;
+            font-size: 12px;
+			> a {
+				color: $linkColorHeader;
+				display: flex;
+				align-items: center;
+				> ._icon , ._count {
+					background: #ff00007d;
+					width: 30px;
+				    height: 29px;
+					display: flex;
+					align-items: center;
+				    justify-content: center;
+				    border-radius: 50%;
+					margin-#{$opposite-side}: 10px;
+				}
+				> ._count {
+					padding-top: 2px;
+				}
+				>._icon {
+					svg {
+					 width: 12px;
+					}
+				}
+				#shopping-cart {
+					width: 18px;
+					margin-#{$opposite-side}: 10px
+				}
+			}
+
+			&:first-child {
+				margin-#{$opposite-side}: 17.5px;
+
+				&::after {
+					content: "";
+				    width: 1px;
+				    height: 32px;
+				    position: absolute;
+				    background-color: #ffffff94;
+				    top: 50%;
+				    #{$opposite-side}: -17.5px;
+				    transform: translate(0, -50%);
+				}
+			}
+			&:last-child {
+				margin-#{$default-side}: 17.5px;
+			}
+			ul {
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				top: 129%;
+				#{$opposite-side}: 0;
+				width: 200px;
+				z-index: 200;
+				margin: 0;
+				padding: 0;
+				background-color: #fff;
+				@include box-shadow;
+				border: 1px solid #707070;
+				border-radius: 0 0 10px 10px;
+                list-style: none;
+				border-top: 3px solid #df0000;
+				@include transformChildMenu;
+				li {
+					position: relative;
+					a {
+						color: $linkChildColorHeader;
+						display: block;
+						padding: 10px 20px;
+						&:hover {
+                          color: #5D93FF;
+						}
+					}
+					&::after{
+						position: absolute;
+						bottom: 0;
+						#{$opposite-side}: 11px;
+						content: "";
+						width: 86%;
+						height: 1px;
+						background-color: #00000029;
+					}
+					&:last-child {
+						&::after {
+							display: none;
+						}
+					}
+				}
+				&:after {
+				    content: "";
+				    display: block;
+				    display: block;
+				    position: absolute;
+				    top: -15px;
+				    #{$opposite-side}: 0;
+				    width: 200px;
+				    height: 15px;
+				    background-color: transparent;
+				    cursor: pointer;
+				}
+		     }
+			 &:hover {
+				 ul {
+					 opacity: 1;
+					 visibility: visible;
+					 @include transformChildMenuHover;
+				 }
+			 }
+		}
+	}
+}
+
+/* ----------   HORIZONTAL: ICON   ---------- */
+.listHD,
+.listHO {
+	&._icon {
+		li {
+			position: relative;
+			width: 45px;
+			height: 45px;
+			background-color: darken($primaryEnColor, 2.75);
+			border-radius: 100%;
+			line-height: 45px;
+			overflow: hidden;
+
+			a {
+				display: block;
+				position: relative;
+				width: 45px;
+				height: 45px;
+				background-color: darken($primaryEnColor, 2.75);
+				line-height: 45px;
+
+				&:hover {
+					background-color: darken($primaryEnColor, 15.29)
+				}
+			}
+
+			img {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%; // WARNING: Not included in the orientation function
+				max-width: 24px;
+				max-height: 24px;
+				transform: translate3d(-50%, -50%, 0);
+			}
+		}
+	}
+}
+
+.listHD {
+	&._icon {
+		li {
+			margin-#{$opposite-side}: 20px;
+
+			&:last-child {
+				margin-#{$opposite-side}: 0
+			}
+		}
+	}
+}
+
+.listHO {
+	&._icon {
+		li {
+			margin-#{$default-side}: 20px;
+
+			&:last-child {
+				margin-#{$default-side}: 0
+			}
+		}
+	}
+}
+
+/* ----------       VERTICAL       ---------- */
+.listV {
+	margin: 0;
+
+	> li {
+		list-style: none outside;
+	}
+
+	&._bullet {
+		> li {
+			position: relative;
+			padding-#{$default-side}: 20px;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 10px;
+				#{$default-side}: 0;
+				width: 8px;
+				height: 8px;
+				border: 2px solid $secondaryColor;
+				border-radius: 3px;
+			}
+		}
+		&._full {
+			> li {
+				&:before {
+					background-color: $secondaryColor;
+				}
+			}
+		}
+	}
+
+	&._triangle {
+		> li {
+			position: relative;
+			padding-#{$default-side}: 20px;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 10px;
+				#{$default-side}: 0;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 4px 8px 4px 0;
+				border-color: $transparent $secondaryColor $transparent $transparent;
+			}
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 12px;
+				#{$default-side}: 1px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 2px 4px 2px 0;
+				border-color: $transparent $primaryEnColor $transparent $transparent;
+			}
+		}
+	}
+
+	&._numberic {
+		> li {
+			margin-#{$default-side}: 20px;
+			padding-#{$default-side}: 10px;
+			list-style-type: if($dir, persian, decimal);
+			font-weight: bold;
+			color: $primaryColor
+		}
+	}
+
+	&._common {
+		> li {
+			> a {
+				display: flex;
+				align-items: center;
+				color: $txtHeaderColor;
+				> * {
+					margin-#{$opposite-side}: 10px;
+					&:last-child {
+						margin-#{$opposite-side}: 0;
+					}
+				}
+				> span {
+					display: block;
+					line-height: 36px;
+					font-size: 14px;
+				}
+				&:hover {
+					color: $secondaryColor;
+				}
+			}
+			> span {
+				display: block;
+				line-height: 36px;
+				font-size: 14px;
+			}
+		}
+		&._triangle {
+			> li {
+				&:before {
+					top: 15px;
+				}
+				&:after {
+					top: 17px;
+				}
+			}
+		}
+		&._type_01 {
+			> li {
+				border-bottom: 1px solid #E5E5E5;
+				&:last-child {
+					border-bottom: medium none;
+				}
+				> a {
+					padding-top: 5px;
+					padding-bottom: 5px;
+					> i {
+						&:before {
+							line-height: 30px;
+							font-size: 20px;
+							color: #C7C7C7;
+							transition: color .3s ease 0s;
+						}
+					}
+					> span {
+						line-height: 30px;
+						color: $txtHeaderColor;
+					}
+					&:hover {
+						background-color: transparentize($secondaryColor, .9);
+						color: inherit;
+						> i {
+							&:before {
+								color: $secondaryColor;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                     HELPER:  DIRECTION                                     */
+/* ------------------------------------------------------------------------------------------ */
+
+.dirRtl {
+	direction: rtl // WARNING: Not included in the orientation function
+}
+
+.dirLtr {
+	direction: ltr // WARNING: Not included in the orientation function
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                    HELPER:  OBSERVATION                                    */
+/* ------------------------------------------------------------------------------------------ */
+
+.overVisible {
+	overflow: visible !important
+}
+
+.overHidden {
+	overflow: hidden !important
+}
+
+.NoWrap {
+	white-space: nowrap !important
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                       HELPER: MARGIN                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+.margin-auto { margin: auto !important }
+.margin-top-auto { margin-top: auto !important }
+.margin-bottom-auto { margin-bottom: auto !important }
+.margin-default-auto { margin-#{$default-side}: auto !important }
+.margin-opposite-auto { margin-#{$opposite-side}: auto !important }
+.margin-horizontal-auto {
+	margin-#{$default-side}: auto !important;
+	margin-#{$opposite-side}: auto !important
+}
+.margin-vertical-auto {
+	margin-top: auto !important;
+	margin-bottom: auto !important
+}
+
+.margin-none { margin: 0 !important }
+.margin-top-none { margin-top: 0 !important }
+.margin-bottom-none { margin-bottom: 0 !important }
+.margin-default-none { margin-#{$default-side}: 0 !important }
+.margin-opposite-none { margin-#{$opposite-side}: 0 !important }
+.margin-horizontal-none {
+	margin-#{$default-side}: 0 !important;
+	margin-#{$opposite-side}: 0 !important
+}
+.margin-vertical-none {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important
+}
+
+.margin-minimize { margin: 10px !important }
+.margin-top-minimize { margin-top: 10px !important }
+.margin-bottom-minimize { margin-bottom: 10px !important }
+.margin-default-minimize { margin-#{$default-side}: 10px !important }
+.margin-opposite-minimize { margin-#{$opposite-side}: 10px !important }
+.margin-horizontal-minimize {
+	margin-#{$default-side}: 10px !important;
+	margin-#{$opposite-side}: 10px !important
+}
+.margin-vertical-minimize {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important
+}
+
+.margin-normalize { margin: 20px !important }
+.margin-top-normalize { margin-top: 20px !important }
+.margin-bottom-normalize { margin-bottom: 20px !important }
+.margin-default-normalize { margin-#{$default-side}: 20px !important }
+.margin-opposite-normalize { margin-#{$opposite-side}: 20px !important }
+.margin-horizontal-normalize {
+	margin-#{$default-side}: 20px !important;
+	margin-#{$opposite-side}: 20px !important
+}
+.margin-vertical-normalize {
+	margin-top: 20px !important;
+	margin-bottom: 20px !important
+}
+
+.margin-maximize { margin: 30px !important }
+.margin-top-maximize { margin-top: 30px !important }
+.margin-bottom-maximize { margin-bottom: 30px !important }
+.margin-default-maximize { margin-#{$default-side}: 30px !important }
+.margin-opposite-maximize { margin-#{$opposite-side}: 30px !important }
+.margin-horizontal-maximize {
+	margin-#{$default-side}: 30px !important;
+	margin-#{$opposite-side}: 30px !important
+}
+.margin-vertical-maximize {
+	margin-top: 30px !important;
+	margin-bottom: 30px !important
+}
+
+.margin-ultra { margin: 40px !important }
+.margin-top-ultra { margin-top: 40px !important }
+.margin-bottom-ultra { margin-bottom: 40px !important }
+.margin-default-ultra { margin-#{$default-side}: 40px !important }
+.margin-opposite-ultra { margin-#{$opposite-side}: 40px !important }
+.margin-horizontal-ultra {
+	margin-#{$default-side}: 40px !important;
+	margin-#{$opposite-side}: 40px !important
+}
+.margin-vertical-ultra {
+	margin-top: 40px !important;
+	margin-bottom: 40px !important
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                      HELPER:  PADDING                                      */
+/* ------------------------------------------------------------------------------------------ */
+
+.padding-none { padding: 0 !important }
+.padding-top-none { padding-top: 0 !important }
+.padding-bottom-none { padding-bottom: 0 !important }
+.padding-default-none { padding-#{$default-side}: 0 !important }
+.padding-opposite-none { padding-#{$opposite-side}: 0 !important }
+.padding-horizontal-none {
+	padding-#{$default-side}: 0 !important;
+	padding-#{$opposite-side}: 0 !important
+}
+.padding-vertical-none {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important
+}
+
+.padding-minimize { padding: 10px !important }
+.padding-top-minimize { padding-top: 10px !important }
+.padding-bottom-minimize { padding-bottom: 10px !important }
+.padding-default-minimize { padding-#{$default-side}: 10px !important }
+.padding-opposite-minimize { padding-#{$opposite-side}: 10px !important }
+.padding-horizontal-minimize {
+	padding-#{$default-side}: 10px !important;
+	padding-#{$opposite-side}: 10px !important
+}
+.padding-vertical-minimize {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important
+}
+
+.padding-normalize { padding: 20px !important }
+.padding-top-normalize { padding-top: 20px !important }
+.padding-bottom-normalize { padding-bottom: 20px !important }
+.padding-default-normalize { padding-#{$default-side}: 20px !important }
+.padding-opposite-normalize { padding-#{$opposite-side}: 20px !important }
+.padding-horizontal-normalize {
+	padding-#{$default-side}: 20px !important;
+	padding-#{$opposite-side}: 20px !important
+}
+.padding-vertical-normalize {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important
+}
+
+.padding-maximize { padding: 30px !important }
+.padding-top-maximize { padding-top: 30px !important }
+.padding-bottom-maximize { padding-bottom: 30px !important }
+.padding-default-maximize { padding-#{$default-side}: 30px !important }
+.padding-opposite-maximize { padding-#{$opposite-side}: 30px !important }
+.padding-horizontal-maximize {
+	padding-#{$default-side}: 30px !important;
+	padding-#{$opposite-side}: 30px !important
+}
+.padding-vertical-maximize {
+	padding-top: 30px !important;
+	padding-bottom: 30px !important
+}
+
+.padding-ultra { padding: 40px !important }
+.padding-top-ultra { padding-top: 40px !important }
+.padding-bottom-ultra { padding-bottom: 40px !important }
+.padding-default-ultra { padding-#{$default-side}: 40px !important }
+.padding-opposite-ultra { padding-#{$opposite-side}: 40px !important }
+.padding-horizontal-ultra {
+	padding-#{$default-side}: 40px !important;
+	padding-#{$opposite-side}: 40px !important
+}
+.padding-vertical-ultra {
+	padding-top: 40px !important;
+	padding-bottom: 40px !important
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                       HELPER: BORDER                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+.radius { border-radius: 0.1875rem !important }
+.rounded { border-radius: 5000px !important }
+
+
+.row {
+	    max-width: 1250px;
+}

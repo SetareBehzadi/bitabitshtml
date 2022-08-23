@@ -1,0 +1,56 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         TITLE:  X3                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-title="x3"] {
+
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+
+	> * {
+		display: block;
+		height: 30px;
+		margin: 0;
+		margin-#{$opposite-side}: 10px;
+		line-height: 30px;
+		&:last-child {
+			margin-#{$opposite-side}: 0;
+		}
+	}
+
+	._img {
+		font-size: 30px;
+		color: $secondaryColor;
+	}
+
+	._text {
+		font-family: "Regular";
+		font-size: 14px;
+	}
+
+	&._maximize {
+		> * {
+			height: 40px;
+			line-height: 40px;
+		}
+		._img {
+			min-width: 40px;
+			font-size: 40px;
+		}
+		._text {
+			font-family: "Bold";
+			font-size: 16px;
+		}
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		._item {
+
+		}
+	}
+	// END VIEWPORT
+
+}

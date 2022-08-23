@@ -1,0 +1,88 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: HOME                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-page="uiKit"] {
+
+	.uiKit__buttons {
+		.fp__slide {
+			.uiKit__title {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 0 30px;
+				padding: 0 20px;
+				text-align: center;
+				font-family: "Bold";
+				font-size: 20px;
+				color: $primaryColor;
+			}
+
+			.row {
+				.column,
+				.columns {
+					[data-button] {
+						margin-#{$default-side}: auto;
+						margin-#{$opposite-side}: auto;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.fp__slide_arrow {
+		position: absolute;
+		top: 50%;
+		width: 70px;
+		height: 90px;
+		margin-top: -45px;
+		-webkit-appearance: none;
+		background: transparent;
+		border: medium none;
+		cursor: pointer;
+		z-index: 99;
+
+		svg {
+			padding: 5px;
+		}
+
+		polyline {
+			stroke-width: 3;
+			transition: all 250ms ease-in-out 0s;
+		}
+
+		&._#{$default-side} {
+			#{$default-side}: 35px;
+		}
+
+		&._#{$opposite-side} {
+			#{$opposite-side}: 35px;
+		}
+
+		&._#{$default-side},
+		&._#{$opposite-side} {
+			&:focus,
+			&:hover {
+				polyline {
+					stroke-width: 6;
+				}
+			}
+
+			&:active {
+				polyline {
+					stroke-width: 10;
+					transition: all 100ms ease-in-out;
+				}
+			}
+		}
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+
+	}
+	// END VIEWPORT
+
+}

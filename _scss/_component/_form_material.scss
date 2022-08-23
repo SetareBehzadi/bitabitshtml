@@ -1,0 +1,845 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                       FORM: MATERIAL                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-form = "searchProduct"] {
+	display: flex;
+	justify-content: flex-end;
+	form {
+		display: flex;
+		align-items: center;
+		input {
+			margin-bottom: 0;
+			width: 200px;
+			box-shadow: none;
+			border: none;
+            border-#{$default-side}: 2px solid $secondaryColor;
+    		background-color: #ffffff1f;
+			color: #fff;
+			height: 29px;
+		}
+		input:focus {
+				box-shadow: none;
+				border: none;
+				border-#{$default-side}: 2px solid #df0000;
+			    background-color: #ffffff1f;
+		}
+		label {
+			color: #fff;
+            margin-#{$opposite-side}: 10px;
+		}
+		button {
+		    padding: 5.9px 7px 2px 7px;
+			background-color: #ffffff1f;
+			cursor: pointer;
+			border-radius: if($dir, 50% 0 0 50%, 0 50px 50px 0);
+           &:hover {
+			   background-color: $secondaryColor;
+		   }
+		  svg {
+			  width: 15px;
+		  }
+		}
+	}
+}
+
+[data-form="material"] {
+	._formItem {
+		position: relative;
+
+		label {
+			display: flex;
+			font-family: "Regular";
+			font-size: 14px;
+			color: $txtBodyColor;
+		}
+
+		input {
+			display: flex;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			background-color: $transparent;
+			border: 1px solid lighten($txtBodyColor, 44.90);
+			border-radius: 4px;
+			box-shadow: 0 0 0 0 transparentize($shadowColor, 1);
+			font-size: 15px;
+
+			&[type="text"],
+			&[type="password"] {
+				position: relative;
+				padding-#{$default-side}: 10px;
+				padding-#{$opposite-side}: 10px;
+				height: 40px;
+				line-height: 38px;
+				z-index: 9;
+			}
+
+			&[type="password"] {
+				font-family: "tahoma";
+			}
+
+			&[type="radio"],
+			&[type="checkbox"] {
+				width: auto;
+			}
+
+			&::-webkit-input-placeholder {
+				color: $transparent;
+			}
+
+			&::-moz-placeholder {
+				color: $transparent;
+			}
+
+			&:-ms-input-placeholder {
+				color: $transparent;
+			}
+
+			&:-moz-placeholder {
+				color: $transparent;
+			}
+		}
+
+		textarea {
+			display: flex;
+			position: relative;
+			width: 100%;
+			margin: 0;
+			padding: 0 10px;
+			background-color: $transparent;
+			border: 1px solid lighten($secondaryEnColor, 29.80);
+			border-radius: 4px;
+			box-shadow: 0 0 0 0 transparentize($shadowColor, 1);
+			line-height: 33px;
+			font-size: 15px;
+			color: $txtBodyColor;
+			resize: vertical;
+			z-index: 9;
+
+			&::-webkit-input-placeholder {
+				color: $transparent;
+			}
+
+			&::-moz-placeholder {
+				color: $transparent;
+			}
+
+			&:-ms-input-placeholder {
+				color: $transparent;
+			}
+
+			&:-moz-placeholder {
+				color: $transparent;
+			}
+		}
+
+		&._text {
+			padding-top: 0;
+			background-color: $primaryEnColor;
+
+			&:after,
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				width: 0;
+				height: 2px;
+				background: darken($forthColor, 20.20);
+				z-index: 99;
+				transition: width 0.3s ease 0s;
+			}
+
+			&:after {
+				#{$default-side}: 50%;
+			}
+
+			&:before {
+				#{$opposite-side}: 50%;
+			}
+
+			label {
+				position: absolute;
+				top: 0;
+				#{$default-side}: 1px;
+				padding: 0 10px;
+				background-color: $primaryEnColor;
+				line-height: 39px;
+				z-index: 1;
+				transition: top 0.3s ease 0s, line-height 0.3s ease 0s, font 0.3s ease 0s, color 0.3s ease 0s;
+			}
+
+			&._full {
+				label {
+					top: -12px;
+					font-size: 11px;
+					line-height: 20px;
+					color: lighten($txtBodyColor, 12.55);
+					z-index: 99;
+				}
+			}
+
+			&._focus {
+				&:after,
+				&:before {
+					width: 50%;
+				}
+
+				label {
+					top: -12px;
+					font-size: 11px;
+					line-height: 20px;
+					color: darken($forthColor, 20.20);
+					z-index: 99;
+				}
+			}
+
+			input {
+				&._info {
+					border-color: $infoColor;
+
+					&+label {
+						color: $infoColor;
+						// &:before {
+						// 	content: "\f071";
+						// 	margin-#{$opposite-side}: 5px;
+						// 	font-family: "icomoon";
+						// 	color: darken($infoColor, 15%);
+						// }
+					}
+				}
+
+				&._success {
+					border-color: $successColor;
+
+					&+label {
+						color: $successColor;
+						// &:before {
+						// 	content: "\f071";
+						// 	margin-#{$opposite-side}: 5px;
+						// 	font-family: "icomoon";
+						// 	color: darken($successColor, 15%);
+						// }
+					}
+				}
+
+				&._warning {
+					border-color: $warningColor;
+
+					&+label {
+						color: $warningColor;
+						// &:before {
+						// 	content: "\f071";
+						// 	margin-#{$opposite-side}: 5px;
+						// 	font-family: "icomoon";
+						// 	color: darken($warningColor, 15%);
+						// }
+					}
+				}
+
+				&._error {
+					border-color: $errorColor;
+
+					&+label {
+						color: $errorColor;
+						// &:before {
+						// 	content: "\f071";
+						// 	margin-#{$opposite-side}: 5px;
+						// 	font-family: "icomoon";
+						// 	color: darken($errorColor, 15%);
+						// }
+					}
+				}
+			}
+		}
+
+		&._select {
+			select {
+				@include hidden;
+			}
+
+			&:after {
+				@include clearFix;
+			}
+
+			.selectLIST {
+				margin: 0;
+				padding: 0;
+
+				> li {
+					position: relative;
+					margin: 0;
+					padding: 0;
+					list-style: none outside none;
+					background-color: $primaryEnColor;
+					border: 1px solid lighten($secondaryEnColor, 29.80);
+					border-radius: 4px;
+
+					._menu {
+						display: flex;
+						position: relative;
+						z-index: 9;
+
+						&:after,
+						&:before {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							width: 0;
+							height: 2px;
+							background: darken($forthColor, 20.20);
+							z-index: 99;
+							transition: width 0.3s ease 0s;
+						}
+
+						&:after {
+							#{$default-side}: 50%;
+						}
+
+						&:before {
+							#{$opposite-side}: 50%;
+						}
+
+						span {
+							display: flex;
+							position: relative;
+							width: 100%;
+							height: 38px;
+							padding-#{$default-side}: 10px;
+							padding-#{$opposite-side}: 40px;
+							line-height: 38px;
+							font-family: "Regular";
+							font-size: 15px;
+							color: $txtBodyColor;
+							transform: perspective(1px) translate3d(0,0,0);
+							z-index: 9;
+							overflow: hidden;
+
+							&:before {
+								content: "\e916";
+								position: absolute;
+								top: 0;
+								#{$opposite-side}: 0;
+								width: 40px;
+								height: 38px;
+								line-height: 38px;
+								text-align: center;
+								font-family: "icomoon";
+								font-size: 20px;
+								transform: rotate(0deg);
+								transition: transform 0.3s ease 0s;
+								z-index: 9;
+							}
+						}
+					}
+
+					> ul {
+						position: absolute;
+						top: 100%;
+						#{$default-side}: 0;
+						min-width: 100%;
+						width: auto;
+						max-height: 400px;
+						margin: 0;
+						padding: 0;
+						border-radius: 2px;
+						box-shadow: 0 2px 2px 1px transparentize($shadowColor, .86), 0 3px 1px -2px transparentize($shadowColor, .8);
+						transform: scale(0);
+						opacity: 0;
+						z-index: -1;
+						overflow-x: hidden;
+						overflow-y: auto;
+						transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.2s cubic-bezier(.4,0,.2,1);
+
+						> li {
+							margin: 0;
+							padding: 0;
+							list-style: none outside none;
+
+							> a {
+								display: block;
+
+								> span {
+									display: block;
+									padding: 0 15px;
+									background-color: $primaryEnColor;
+									line-height: 40px;
+									font-family: "Regular";
+									color: $txtBodyColor;
+									white-space: nowrap;
+
+									&:hover {
+										background-color: darken($primaryEnColor, 6.67);
+									}
+								}
+							}
+
+							&._selected {
+								> a {
+									> span {
+										background-color: darken($primaryEnColor, 13.33);
+									}
+								}
+							}
+						}
+					}
+
+					&._visible {
+						._menu {
+							&:after,
+							&:before {
+								width: 50%;
+							}
+
+							span {
+								&:before {
+									transform: rotate(180deg);
+								}
+							}
+						}
+
+						> ul {
+							transform: scale(1);
+							opacity: 1;
+							z-index: 999;
+						}
+					}
+				}
+			}
+
+			&[class*="_col"] {
+				display: flex;
+				flex-flow: row wrap;
+
+				.selectLIST {
+					padding-#{$opposite-side}: 15px;
+
+					&:last-child {
+						padding-#{$opposite-side}: 0;
+					}
+				}
+			}
+
+			&._col_2 {
+				.selectLIST {
+					flex: 0 0 calc(100% / 2);
+					width: calc(100% / 2);
+				}
+			}
+
+			&._col_3 {
+				.selectLIST {
+					flex: 0 0 calc(100% / 3);
+					width: calc(100% / 3);
+				}
+			}
+
+			&._col_4 {
+				.selectLIST {
+					flex: 0 0 calc(100% / 4);
+					width: calc(100% / 4);
+				}
+			}
+
+			&._col_5 {
+				.selectLIST {
+					flex: 0 0 calc(100% / 5);
+					width: calc(100% / 5);
+				}
+			}
+		}
+
+		&._checkbox,
+		&._radioCheck {
+			label {
+				position: relative;
+				float: $default-side;
+				margin-#{$opposite-side}: 15px;
+				padding-#{$default-side}: 23px;
+				z-index: 9;
+				cursor: pointer;
+
+				&:last-child {
+					margin-#{$opposite-side}: 0;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					#{$default-side}: 0;
+					width: 18px;
+					height: 18px;
+					margin-top: -9px;
+					border: 2px solid lighten($secondaryEnColor, 16.47);
+					border-radius: 15%;
+					transition: border 0.6s ease 0s;
+					z-index: 9;
+				}
+
+				input[type="checkbox"],
+				input[type="radio"] {
+					position: absolute;
+					top: 0;
+					#{$default-side}: 0;
+					z-index: 1;
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				span {
+					display: block;
+					line-height: 30px;
+					-webkit-touch-callout: none;
+					/* iOS Safari */
+					user-select: none;
+
+					&:after,
+					&:before {
+						content: "";
+						position: absolute;
+						background-color: darken($forthColor, 20.20);
+						border-radius: 30%;
+						transform-origin: left top;
+						opacity: 0;
+						transition: opacity 0.22s ease 0s, height 0s linear 0.22s;
+					}
+
+					&:before {
+						top: 50%;
+						#{$default-side}: if($dir, 13px, 2px);
+						width: 3px;
+						height: 0;
+						margin-top: -3px;
+						transform: rotate(-40deg);
+						z-index: 99;
+					}
+
+					&:after {
+						top: 50%;
+						#{$default-side}: if($dir, 6px, 10px);
+						width: 3px;
+						height: 0;
+						margin-top: 5px;
+						box-shadow: 0 0 0 2px $primaryEnColor;
+						transform: rotate(-140deg);
+						z-index: 9;
+					}
+				}
+
+				&:hover {
+					&:before {
+						border-color: darken($forthColor, 20.20);
+					}
+				}
+
+				&._checked {
+					&:before {
+						border-color: darken($forthColor, 20.20);
+					}
+
+					span {
+						&:before {
+							height: 10px;
+							opacity: 1;
+							transition: height 0.22s ease 0s;
+						}
+
+						&:after {
+							height: 24px;
+							opacity: 1;
+							transition: height 0.22s ease 0.22s;
+						}
+					}
+				}
+			}
+		}
+
+		&._radio {
+			label {
+				position: relative;
+				float: $default-side;
+				margin-#{$opposite-side}: 15px;
+				padding-#{$default-side}: 23px;
+				z-index: 9;
+				cursor: pointer;
+
+				&:last-child {
+					margin-#{$opposite-side}: 0;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					#{$default-side}: 0;
+					width: 18px;
+					height: 18px;
+					margin-top: -9px;
+					border: 2px solid lighten($secondaryEnColor, 16.47);
+					border-radius: 100%;
+					transition: border 0.6s ease 0s;
+					z-index: 9;
+				}
+
+				input[type="radio"] {
+					position: absolute;
+					top: 0;
+					#{$default-side}: 0;
+					z-index: 1;
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				span {
+					display: block;
+					line-height: 30px;
+					-webkit-touch-callout: none;
+					/* iOS Safari */
+					user-select: none;
+
+					&:before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						#{$default-side}: 4px;
+						width: 10px;
+						height: 10px;
+						margin-top: -5px;
+						background-color: darken($forthColor, 20.20);
+						border-radius: 100%;
+						transform: scale(0);
+						z-index: 99;
+						opacity: 0;
+						transition: transform 0.28s ease 0s, opacity 0.28s ease 0s;
+					}
+				}
+
+				&:hover {
+					&:before {
+						border-color: darken($forthColor, 20.20);
+					}
+				}
+
+				&._checked {
+					&:before {
+						border-color: darken($forthColor, 20.20);
+					}
+
+					span {
+						&:before {
+							transform: scale(1);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		&._button {
+			&:after {
+				@include clearFix;
+			}
+
+			input[type="submit"] {
+				border: medium none;
+				color: $primaryEnColor !important;
+			}
+
+			button,
+			input[type="submit"] {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: center;
+				height: 38px;
+				padding: 0 15px;
+				border-radius: 4px;
+				background-color: lighten($secondaryEnColor, 37.65);
+				color: $txtBodyColor;
+				cursor: pointer;
+				box-shadow: 0 1px 5px 0 transparentize($shadowColor, .8), 0 2px 2px 0 transparentize($shadowColor, .86), 0 3px 1px -2px transparentize($shadowColor, .88);
+				transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s, border 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+				&:after {
+					@include clearFix;
+				}
+
+				> * {
+					flex: 0 0 auto;
+					margin-#{$opposite-side}: 10px;
+
+					&:last-child {
+						margin-#{$opposite-side}: 0;
+					}
+				}
+
+				i {
+					font-size: 15px;
+				}
+
+				span {
+					font-family: "Regular";
+					font-size: 15px;
+				}
+
+				&:hover {
+					background-color: lighten($secondaryEnColor, 33.33);
+				}
+
+				&:active {
+					box-shadow: 0 5px 5px -3px transparentize($shadowColor, .8), 0 8px 10px 1px transparentize($shadowColor, .86), 0 3px 14px 2px transparentize($shadowColor, .88);
+				}
+
+				&._primary {
+					background-color: lighten($primaryColor, 7);
+
+					> * {
+						color: $primaryEnColor;
+					}
+
+					&:hover {
+						background-color: $primaryColor;
+					}
+				}
+
+				&._secondary {
+					background-color: lighten($secondaryColor, 7);
+
+					&:hover {
+						background-color: $secondaryColor;
+					}
+				}
+
+				&._info {
+					background-color: lighten($infoColor, 7);
+
+					> * {
+						color: $primaryEnColor;
+					}
+
+					&:hover {
+						background-color: $infoColor;
+					}
+				}
+
+				&._success {
+					background-color: lighten($successColor, 7);
+
+					> * {
+						color: $primaryEnColor;
+					}
+
+					&:hover {
+						background-color: $successColor;
+					}
+				}
+
+				&._warning {
+					background-color: lighten($warningColor, 7);
+
+					> * {
+						color: $primaryEnColor;
+					}
+
+					&:hover {
+						background-color: $warningColor;
+					}
+				}
+
+				&._error {
+					background-color: lighten($errorColor, 7);
+
+					> * {
+						color: $primaryEnColor;
+					}
+
+					&:hover {
+						background-color: $errorColor;
+					}
+				}
+
+				&._border {
+					background-color: $transparent;
+					border: 1px solid lighten($secondaryEnColor, 25.65);
+					box-shadow: 0 0 0 0 transparentize($shadowColor, 1);
+
+					&._primary {
+						border-color: $primaryColor;
+
+						> * {
+							color: $primaryColor;
+						}
+
+						&:hover {
+							background-color: lighten($primaryColor, 65);
+						}
+					}
+
+					&._secondary {
+						border-color: $secondaryColor;
+
+						> * {
+							color: $secondaryColor;
+						}
+
+						&:hover {
+							background-color: lighten($secondaryColor, 20.20);
+							> * {
+								color: darken($secondaryColor, 20.20);
+							}
+						}
+					}
+
+					&._info {
+						border-color: lighten($infoColor, 20);
+
+						> * {
+							color: $infoColor;
+						}
+
+						&:hover {
+							background-color: lighten($infoColor, 45);
+						}
+					}
+
+					&._success {
+						border-color: lighten($successColor, 20);
+
+						> * {
+							color: $successColor;
+						}
+
+						&:hover {
+							background-color: lighten($successColor, 45);
+						}
+					}
+
+					&._warning {
+						border-color: lighten($warningColor, 20);
+
+						> * {
+							color: $warningColor;
+						}
+
+						&:hover {
+							background-color: lighten($warningColor, 40);
+						}
+					}
+
+					&._error {
+						border-color: lighten($errorColor, 20);
+
+						> * {
+							color: $errorColor;
+						}
+
+						&:hover {
+							background-color: lighten($errorColor, 35);
+						}
+					}
+				}
+			}
+		}
+	}
+}

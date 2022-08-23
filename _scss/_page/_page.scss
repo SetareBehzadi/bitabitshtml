@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: auth                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+._img_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 30px;
+}
+
+.sec-title {
+	font-size: 18px;
+	color: #01373E;
+}
+
+.pt-3 {
+	padding-top: 30px;
+}
+
+.example-text {
+	max-width: 690px;
+	margin: auto;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0 3px 35px #0000000d;
+	border-radius: 10px;
+}
+@media (max-width:1119px) {}
+@media (max-width:1023px) {}

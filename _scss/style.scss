@@ -1,0 +1,106 @@
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------           STYLE            ------------------------------- */
+/* -------------------------             CONFIGURATION              ------------------------- */
+/* -------------------------------        VERSION 0.1         ------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+
+
+/* --------------------------------------     CORE     -------------------------------------- */
+@import './_core/function';
+@import './_core/variable';
+@import './_core/mediaQuery';
+@import './_core/mixin';
+@import './_core/direction';
+@import './_core/palette';
+@import './_core/font';
+@import './_core/icomoon';
+@import './_core/reset';
+@import './_core/keyframe';
+
+
+/* --------------------------------------    SHARED    -------------------------------------- */
+// @import './_shared/button_x1';
+// @import './_shared/button_x2';
+@import './_shared/link_x1';
+@import './_shared/title_x1';
+// @import './_shared/title_x2';
+// @import './_shared/title_x3';
+
+@import './_shared/table_x1';
+@import './_shared/table_x2';
+// @import './_shared/input_x1';
+@import './_shared/input_x2';
+@import './_shared/input_x3';
+@import './_shared/pv_select';
+@import './_shared/form_x1';
+@import './_shared/form_x3';
+@import './_shared/pv_alert';
+@import './_shared/pv_badge';
+@import './_shared/list_x1';
+@import './_shared/icon';
+
+
+/* --------------------------------------   COMPONENT  -------------------------------------- */
+// @import './_component/accordion';
+// @import './_component/box_x1';
+@import './_component/breadcrumb_x1';
+// @import './_component/card_x1';
+// @import './_component/form_material';
+// @import './_component/list_x1';
+@import './_component/menu_horizontal';
+@import './_component/menu_responsive';
+@import './_component/menu_vertical';
+// @import './_component/pagination_x1';
+// @import './_component/slider_x1';
+// @import './_component/tab_accordion_x1';
+// @import './_component/textbox_x1';
+
+@import './_component/box_content_x1';
+@import './_component/box_content_x2';
+@import './_component/box_content_x3';
+@import './_component/box_content_x4';
+@import './_component/box_content_x5';
+@import './_component/box_content_x6';
+@import './_component/box_content_x7';
+
+@import './_component/pagination_x3';
+
+@import './_component/ticket-form';
+@import './_component/loan-reveal';
+@import './_component/login-form';
+@import './_component/box_setting';
+
+// @import './_component/menu-panel';
+// @import './_component/_user-menu-panel';
+/* --------------------------------------    PLUGIN    -------------------------------------- */
+@import './_plugin/plyr';
+
+
+/* --------------------------------------    LAYOUT    -------------------------------------- */
+@import './_layout/general';
+@import './_layout/header';
+@import './_layout/headerMain_x1';
+@import './_layout/footerMain_x1';
+@import './_layout/offCanvas';
+@import './_layout/grid';
+@import './_layout/breadcrumb';
+@import './_layout/dashboard';
+
+
+/* --------------------------------------     PAGE     -------------------------------------- */
+@import './_page/uiKit';
+// @import './_page/coin-sale-buy';
+@import './_page/_response_ticket';
+@import './_page/_auth';
+@import './_page/_page';
+@import './_page/_user-account';
+@import './_page/_rials';
+@import './_page/_coin-and-transfer';
+@import './_page/_wallet';
+@import './_page/_invite-friends';
+@import './_page/_market';
+@import './_page/coin-single';
+
+
+/* --------------------------------------    UTILITY   -------------------------------------- */
+@import './_core/helper';

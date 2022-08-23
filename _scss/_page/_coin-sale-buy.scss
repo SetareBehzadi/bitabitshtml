@@ -1,0 +1,105 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: HOME                                         */
+/* ------------------------------------------------------------------------------------------ */
+.coin-badge {
+	text-align: center;
+	border-radius: 8px;
+
+	li {
+		margin-bottom: 20px;
+		border-radius: 8px;
+
+		&:first-child {
+			padding: 86px 0 0;
+			background-color: #ffbb2133;
+			position: relative;
+			border-radius: 8px;
+		}
+
+		&._name {
+			padding-top: 15px;
+			font-size: 18px;
+			color: #000;
+		}
+
+		&.action {
+			padding: 1px 22px 25px;
+
+			a {
+				margin: 8px 0;
+			}
+		}
+	}
+
+	._img {
+		background-image: url("../media/cp-img/polygon.png");
+		width: 72px;
+		height: 68px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-position: center;
+		background-size: auto;
+		margin: auto;
+		position: absolute;
+		bottom: -33px;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	&._bg_yel {
+		li {
+			&:first-child {
+				background-color: #ffbb2133;
+			}
+		}
+	}
+
+	&._bg_pur {
+		li {
+			&:first-child {
+				background-color: #5459E633;
+			}
+		}
+	}
+
+	&._bg_gre {
+		li {
+			&:first-child {
+				background-color: #06B93633;
+			}
+		}
+	}
+
+	&._bg_pur1 {
+		li {
+			&:first-child {
+				background-color: #6B7ABB33;
+			}
+		}
+	}
+
+	&._bg_pur2 {
+		li {
+			&:first-child {
+				background-color: #AD4BF833;
+			}
+		}
+	}
+}
+
+._user_img_icon {
+	text-align: end;
+	position: absolute;
+  left: 0;
+  bottom: -149px;
+  z-index: -1;
+
+}
+@media (max-width:767px) {
+	._user_img_icon {
+		img {
+			margin-top: 0;
+		}
+	}
+}

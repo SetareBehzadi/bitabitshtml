@@ -1,0 +1,54 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  X3                                          */
+/* ------------------------------------------------------------------------------------------ */
+._ticket-form {
+	ul {
+		max-width: 792px;
+		margin: auto;
+		margin-top: 43px;
+		li {
+			margin: 16px 0;
+		}
+	}
+	input {
+		height: 55px;
+		border-radius: 15px;
+		box-shadow: 0 3px 35px #00000008;
+
+	}
+	textarea {
+		margin-bottom: 16px;
+	    display: flex;
+	    align-items: center;
+	    background-color: #fff;
+	    box-shadow: 0 3px 6px #00000005;
+	    border-radius: 15px;
+	    border: 1px solid #fff;
+	}
+	button {
+		margin: 0 auto 0 0;
+		background-color: #02C076;
+		width: 254px;
+		height: 41px;
+		border-radius: 21px;
+	}
+}
+
+@media (max-width:1199px) {
+
+}
+@media (max-width:1023px) {
+
+}
+@media (max-width:1023px) {
+
+}
+@media (max-width:767px) {
+
+}
+@media (max-width:639px) {
+
+}
+@media (max-width:330px) {
+
+}

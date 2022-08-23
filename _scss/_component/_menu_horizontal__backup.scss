@@ -1,0 +1,331 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                   MAIN MENU:  HORIZONTAL                                   */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-menu="horizontal"] , .horizontal {
+
+	/* ------------------------------------    GENERAL   ------------------------------------ */
+//	.menu-container {
+		display: flex;
+
+
+			ul {
+				position: relative;
+				margin: 0;
+				padding: 0;
+
+				li {
+					margin: 0;
+					padding: 0;
+					list-style: none outside;
+
+					a {
+						display: block;
+						position: relative;
+
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+
+			/* ------------------------------------   LEVEL 01   ------------------------------------ */
+			> ul {
+				display: flex;
+
+				> li {
+					padding-#{$opposite-side}: 10px;
+					padding-#{$default-side}: 15px;
+					background-color: $transparent;
+
+					> a {
+						color: $linkColorHeader;
+						padding-#{$opposite-side}: 20px;
+						> span {
+							line-height: 66px;
+							font-family: "Regular";
+							font-size: 14px;
+							@if $DIRECTION == ltr {
+								text-transform: capitalize;
+								font-weight: bold;
+							}
+							color: getColor($baseTextColors , 'black');
+						}
+					}
+
+					ul {
+						> li {
+							position: relative;
+							&::after{
+								position: absolute;
+								bottom: 0;
+								#{$opposite-side}: 11px;
+								content: "";
+								width: 86%;
+								height: 1px;
+								background-color: #00000029;
+							}
+							a {
+								&:hover {
+									background-color: $linkBackgroundHeaderHover;
+								}
+							}
+							&:last-child {
+								&::after {
+									display: none;
+								}
+							}
+						}
+					}
+
+				&.menu-item-has-children {
+   			       position: relative;
+
+   			       > a {
+   			         &:after {
+   			           position: absolute;
+   			           #{$default-side}: 100%;
+   			           top: 50%;
+   			           content: $menu-arrow-bottom;
+   			           font-family: "icomoon";
+   			           transform: translate(0, -50%);
+   			         }
+
+   			       }
+
+   			       > ul {
+   			         opacity: 0;
+   			         visibility: hidden;
+   			         position: absolute;
+   			         top: 157%;
+   			         #{$default-side}: 0;
+   			         width: 200px;
+   			         z-index: 200;
+   			         margin: 0;
+   			         padding: 0;
+                     background-color: #fff;
+                     @include box-shadow;
+					 border: 1px solid #707070;
+					 border-radius: 0 0 10px 10px;
+					 border-top: 3px solid getColor($baseColors , 'red');
+ 				 	 @include transformChildMenu;
+
+   			         &:after {
+   			           content: '';
+   			           display: block;
+   			           display: block;
+   			           position: absolute;
+   			           top: -17px;
+   			           #{$opposite-side}: 0;
+   			           width: 200px;
+   			           height: 18px;
+   			           background-color: transparent;
+   			           cursor: pointer;
+   			         }
+
+   			         li {
+   			           position: relative;
+   			           width: 100%;
+   			           font-size: 14px;
+
+   			           a {
+   			             display: block;
+   			             padding: 10px 20px;
+   			           }
+   			         }
+
+   			         li {
+   			           &.menu-item-has-children {
+   			             position: relative;
+
+   			             ul {
+   			               opacity: 0;
+   			               visibility: hidden;
+   			               position: absolute;
+   			               top: -3px;
+   			               #{$default-side}: 100%;
+   			               width: 200px;
+   			               z-index: 200;
+   			               margin: 0;
+   			               padding: 0;
+						   background-color: #fff;
+						   @include box-shadow;
+						   border: 1px solid #707070;
+						   border-radius: 0 0 10px 10px;
+						   border-top: 3px solid $borderColorOne;
+                           @include transformChildMenu;
+   			             }
+
+   			             &:hover {
+   			               > a {
+   			                 color: $linkChildColorHeader;
+
+   			                 &:after {
+   			                   color:$secondaryColor;
+   			                 }
+   			               }
+
+   			               > ul {
+   			                 opacity: 1;
+   			                 visibility: visible;
+							 @include transformChildMenuHover;
+   			               }
+   			             }
+
+   			             > a:after {
+   			               position: absolute;
+   			               #{$opposite-side}: 20px;
+   			               #{$default-side}: auto;
+   			               border-width: 4px 6px 4px 0;
+   			               border-color: transparent #dee2e6 transparent transparent;
+   			               content: if($dir , $menu-arrow-right , $menu-arrow-left);
+   			               font-family: "icomoon" !important;
+   			               border-width: 0;
+						   top: 50%;
+						   transform: translate(0, -50%);
+
+   			             }
+   			           }
+   			         }
+   			       }
+
+   			       &:hover {
+   			         > a {
+   			           color: $linkColorHeader;
+
+   			           &:after {
+   			             color: $secondaryColor;
+   			           }
+   			         }
+
+   			         > ul {
+   			           opacity: 1;
+   			           visibility: visible;
+ 				   	   @include transformChildMenuHover;
+   			         }
+   			       }
+   			     }
+				}
+			}
+
+			/* ------------------------------------     MEGA     ------------------------------------ */
+			._mega {
+				position: static !important;
+
+				._megaWrapper {
+					display: none;
+					position: absolute;
+					top: 100%;
+					#{$default-side}: 0;
+					width: auto;
+					min-width: 600px;
+					max-width: 100%;
+					background-color: $primaryEnColor;
+					border-bottom-#{$default-side}-radius: 15px;
+					border-bottom-#{$opposite-side}-radius: 15px;
+					box-shadow: 0 3px 6px -3px transparentize($shadowColor, .5);
+					z-index: 999;
+
+					> ul {
+						display: flex;
+						padding: 10px;
+
+						> li {
+							flex-grow: 1;
+							padding: 0 10px;
+
+							&:not(._parent) {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								a {
+									cursor: default;
+									pointer-events: none;
+									img {
+										display: block;
+										margin-top: 30%;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				._parent {
+					> a {
+						position: relative;
+						padding: 15px;
+						cursor: default;
+
+						&:before {
+							content: "";
+							display: block;
+							position: absolute;
+							bottom: 0;
+							#{$default-side}: 15px;
+							width: calc( 100% - 15px );
+							height: 1px;
+							background-color: transparentize($txtBodyColor, .8);
+						}
+						> * {
+							margin-bottom: 10px;
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+						> i {
+							width: 46px;
+							height: 46px;
+							font-size: 46px;
+						}
+						> span {
+							display: table;
+							position: relative;
+							line-height: 30px;
+							font-family: "Bold";
+							font-size: 14px;
+							color: $txtBodyColor;
+							&:before {
+								content: "";
+								display: block;
+								position: absolute;
+								bottom: -16px;
+								#{$default-side}: 0;
+								width: 100%;
+								height: 3px;
+								background-color: $secondaryColor;
+							}
+						}
+					}
+
+					> ul {
+						padding: 15px;
+						> li {
+							display: flex;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+
+							> a {
+								color: $txtBodyColor;
+
+								> span {
+									line-height: 36px;
+									font-size: 14px;
+								}
+
+								&:hover {
+									color: $secondaryColor;
+								}
+							}
+						}
+					}
+				}
+			}
+//	}
+
+
+
+}/* END [data-menu="horizontal"] */

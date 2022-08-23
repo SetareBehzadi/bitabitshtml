@@ -1,0 +1,45 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  X1                                          */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-box="x1"] {
+	padding: 10px;
+	background-color: transparentize($txtBodyColor, .85);
+	border-radius: 10px;
+
+	&._normalize {
+		padding: 20px;
+	}
+
+	&._maximize {
+		padding: 30px;
+	}
+
+	&._ultra {
+		padding: 40px;
+	}
+
+	@mixin palette($name, $color1) {
+		&.#{$name} {
+			background-color: transparentize($color1, .85);
+			&._borderic {
+				border: 1px solid $color1;
+			}
+		}
+	}
+
+	@include palette("_primary", $primaryColor);
+	@include palette("_secondary", $secondaryColor);
+	@include palette("_third", $thirdColor);
+	@include palette("_info", $infoColor);
+	@include palette("_success", $successColor);
+	@include palette("_warning", $warningColor);
+	@include palette("_error", $errorColor);
+	@include palette("_light", $primaryEnColor);
+	@include palette("_dark", $shadowColor);
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {}
+	// END VIEWPORT
+}

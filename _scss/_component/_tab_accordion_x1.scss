@@ -1,0 +1,190 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                     TAB ACCORDION:  X1                                     */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-tab-accordion="x1"] {
+
+	.tabs {
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		background: none;
+		border: medium none;
+
+		.tabs-title {
+			flex: 1 1 0;
+			float: none;
+
+			a {
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				margin: 0;
+				padding: 0;
+				&:before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 52px;
+					#{$default-side}: 0;
+					width: 100%;
+					height: 2px;
+					background-color: lighten($secondaryEnColor, 39.61);
+					z-index: 1;
+				}
+				._text {
+					display: block;
+					position: relative;
+					height: 30px;
+					line-height: 30px;
+					font-family: "Bold";
+					font-size: 14px;
+					color: $primaryColor;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					z-index: 9;
+				}
+				._icon {
+					display: block;
+					position: relative;
+					width: 25px;
+					height: 25px;
+					margin-top: 10px;
+					border-radius: 3px;
+					background-color: lighten($secondaryEnColor, 37.25);
+					line-height: 25px;
+					text-align: center;
+					font-family: "Regular";
+					font-style: normal;
+					font-size: 15px;
+					color: $primaryEnColor;
+					z-index: 9;
+				}
+				._img {
+					display: block;
+					position: relative;
+					width: 50px;
+					height: 50px;
+					margin-top: 20px;
+					z-index: 9;
+					font-size: 50px;
+				}
+				&:focus,
+				&[aria-selected=true] {
+					background-color: $transparent;
+				}
+			}
+			&.is-active {
+				a {
+					&:before {
+						background-color: $secondaryColor;
+					}
+					._icon {
+						background-color: $secondaryColor;
+					}
+				}
+			}
+		}
+
+	}
+
+	.tabs-content {
+		background: none;
+		border: medium none;
+
+		.tabs-panel {
+			height: 164px;
+			padding: 60px 160px 0;
+			overflow: hidden;
+			> * {
+				margin: 0;
+				padding: 0;
+				line-height: 26px;
+				text-align: center;
+				font-size: 14px;
+				color: $txtHeaderColor;
+			}
+			&.is-active {}
+		}
+
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+
+		[data-responsive-accordion-tabs="tabs small-accordion medium-tabs"] {
+			flex-direction: column;
+		}
+
+		.accordion-item {
+			.accordion-title {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				padding-#{$opposite-side}: 50px;
+				border: medium none;
+				line-height: 26px;
+				&:before {
+					content: "\e916";
+					order: 3;
+					#{$default-side}: auto;
+					#{$opposite-side}: 1rem;
+					font-family: "icomoon";
+					font-size: 20px;
+				}
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					#{$default-side}: 0;
+					bottom: 0;
+					width: 100%;
+					height: 1px;
+					background-color: lighten($secondaryEnColor, 30.30);
+				}
+				._text {
+					order: 2;
+					margin-#{$default-side}: 20px;
+					font-family: "Bold";
+					font-size: 14px;
+					color: $primaryColor;
+				}
+				._icon {
+					@include hidden;
+				}
+				._img {
+					order: 1;
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: $transparent;
+				}
+			}
+			.accordion-content {
+				border: medium none;
+				> * {
+					line-height: 26px;
+					text-align: justify;
+				}
+			}
+			&.is-active {
+				.accordion-title {
+					&:before {
+						content: "\e917";
+					}
+					._text {}
+					._icon {}
+					._img {}
+				}
+			}
+		}
+
+	}
+	// END VIEWPORT
+
+}

@@ -1,0 +1,132 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                   COLOR PALETTE: DYNAMIC                                   */
+/* ------------------------------------------------------------------------------------------ */
+$baseColors: (
+	'primary': #000000,
+	'black': #000000,
+	'red': #DF0000,
+	'darkRed': #730302,
+	'white': white,
+);
+$baseTextColors: (
+	'primary': #000000,
+	'accent': #9e7474,
+	'black': #000000,
+	'red': #DF0000,
+	'white': white,
+);
+$baseBorderColors: (
+	'lightWhite': #7b7b7b,
+);
+@function getColor($map, $key: 'primary') {
+	@return map-get($map, $key);
+}
+/* -------------------------------------      CORE      ------------------------------------- */
+$primaryColor: #6893EE;
+$secondaryColor: #02C076;
+$secondaryColorDark: #730302;
+$thirdColor: #FFAD20;
+// $forthColor: #F80357;
+$forthColor: #1CACD8;
+// $fifthColor: #c1ba00;
+$fifthColor: #005964;
+/* -------------------------------------   SUPPLEMENT   ------------------------------------- */
+$primaryEnColor: #ffffff;
+$primaryDeColor: null;
+$secondaryEnColor: #808080;
+$secondaryDeColor: null;
+/* -------------------------------------      TEXT      ------------------------------------- */
+$txtBodyColor: #495057; //gary
+$textBodyColorWhite: #ffffff;
+$textBodyColorBlack: #000000;
+$txtHeaderColor: #000000;
+$shadowColor: #000000;
+$textColorOne: #6E748E;
+/* -------------------------------------      border color      ------------------------------------- */
+$borderColorOne: #DAE7FE;
+$borderColorTwo: #E9E9E9;
+/* -------------------------------------      link      ------------------------------------- */
+$linkColorHeader: #ffffff;
+$linkColorHeaderHover: $thirdColor;
+$linkChildColorHeader: #000000;
+$linkHoverInside: $secondaryColor;
+
+$linkBeforColor: $secondaryColor;
+$linkBackColorPrimary: $primaryColor;
+$linkBackColorSecondary: $secondaryColor;
+$linkBackColorthird: $thirdColor;
+
+
+$linkBackColorHoverPrimary: #2D6DF5;
+$linkBackColorHoverSecondary: #745DDE;
+$linkBackColorHoverthird: #F5A51A;
+
+$linkBackgroundHeaderHover: rgba(223,0,0,.11);
+
+
+
+$backgroundColorOne: #fff;
+$backgroundColorTwo: #2D6DF5;
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                   COLOR PALETTE:  STATIC                                   */
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------      TOOLS     ------------------------------------- */
+$infoColor: #0075d9;
+$errorColor: #ef3f3e;
+$warningColor: #ff7e00;
+$successColor: #5a9e11;
+$infoSecondColor: lighten($infoColor, 40%);
+$errorSecondColor: lighten($errorColor, 35%);
+$warningSecondColor: lighten($warningColor, 47%);
+$successSecondColor: lighten($successColor, 47%); /* -------------------------------------     SPECIAL    ------------------------------------- */
+$silverColor: #e1e5ec;
+$purpleColor: #8e44ad;
+$purpleIntenseColor: #8775a7;
+$blueColor: #3598dc;
+$greenColor: #26c281;
+$greenMeadowColor: #1bbc9b;
+$yellowLemonColor: #f7ca18;
+$yellowGoldColor: #e87e04;
+$redHazeColor: #f36a5a;
+$flamingoColor: #ef4836;
+$silverSecondColor: lighten($silverColor, 15%);
+$purpleSecondColor: lighten($purpleColor, 40%);
+$purpleIntenseSecondColor: lighten($purpleIntenseColor, 35%);
+$blueSecondColor: lighten($blueColor, 40%);
+$greenSecondColor: lighten($greenMeadowColor, 50%);
+$greenMeadowSecondColor: lighten($greenMeadowColor, 50%);
+$yellowLemonSecondcolor: lighten($yellowLemonColor, 40%);
+$yellowGoldSecondcolor: lighten($yellowGoldColor, 40%);
+$redHazeSecondColor: lighten($redHazeColor, 30%);
+$flamingoSecondcolor: lighten($flamingoColor, 35%); /* -------------------------------------      RGBY      ------------------------------------- */
+$blueColor: #0000ff;
+$greenColor: #00ff00;
+$yellowColor: #ffff00;
+$redColor: #ff0000;
+$whiteColor: #ffffff;
+$blackColor: #000000;
+$greyColor: #808080;
+$transparent: transparent; /* -------------------------------------     SOCIAL     ------------------------------------- */
+$pinterest: #cb2027;
+$facebook: #3c5B9B;
+$linkedin: #027ba5;
+$youtube: #f03434;
+$twitter: #359bed;
+$google: #e33729;
+$rss: #fd9f13;
+$tumblr: #36465d;
+$instagram: #8440b7;
+$reddit: #ff4500;
+$vk: #4c75a3;
+$flickr: #ff0084;
+$vine: #00b489;
+$meetup: #ed1c40;
+$telegram: #2ca5e0;
+$snapchat: #fffc00;
+$whatsapp: #31ba46;
+$quora: #a82401;
+$stumbleupon: #ee4813;
+$delicious: #000000;
+$digg: #1b5791;

@@ -1,0 +1,14 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          DIRECTION                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+$DIRECTION: rtl ;
+
+$dir: if($DIRECTION==rtl, true, false);
+
+$default-side: if($dir, right, left);
+$opposite-side: if($dir, left, right);
+$default-direction: if($dir, rtl, ltr);
+$opposite-direction: if($dir, ltr, rtl);
+
+$sign: if($dir, +1, -1);

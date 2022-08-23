@@ -1,0 +1,242 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: auth                                         */
+/* ------------------------------------------------------------------------------------------ */
+.auth-site {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+
+	._content {
+		padding: 30px 25px 44px;
+		max-width: 463px;
+		margin: auto;
+		width: 100%;
+	}
+
+	.logo {
+		text-align: center;
+		padding-bottom: 25px;
+
+		a {
+			display: block;
+		}
+	}
+
+	._title {
+		display: flex;
+		justify-content: center;
+	}
+
+	h6 {
+		border-bottom: 2px solid #FFAD20;
+		padding: 20px 39px 8px;
+		margin-bottom: 24px;
+	}
+
+	.form-sec {
+		background-color: #fff;
+		border-radius: 15px;
+		padding: 0 30px 15px;
+		width: 100%;
+		z-index: 2;
+
+		._form-flex {
+			display: flex;
+			justify-content: space-between;
+			margin: 17px 0 34px;
+		}
+
+		input {
+			border: 1px solid #BEBEBE;
+			direction: ltr;
+			text-align: right;
+		}
+
+		._checkbox {
+			display: flex;
+			align-items: center;
+
+			&._text_x5 {
+				label {
+					font-size: 12px;
+				}
+			}
+
+			label {
+				padding-right: 34px;
+				margin-right: -28px;
+				cursor: pointer;
+			}
+
+			input {
+				margin: 0 !important;
+			}
+
+			#remember {
+				display: none;
+			}
+
+			.icon-pv-icons-bc {
+				display: flex;
+				margin-left: 26px;
+				font-size: 20px;
+
+				.path1:before {
+					margin-left: -20px;
+				}
+			}
+
+			.path3 {
+				display: none;
+			}
+
+			input:checked ~ .icon-pv-icons-bc .path3 {
+				display: inline-block;
+			}
+		}
+
+		li {
+			margin-bottom: 12px;
+			position: relative;
+		}
+
+		._invaite {
+			display: flex;
+			align-items: center;
+
+			label {
+				width: 135px;
+			}
+
+			input {
+				width: 160px;
+				text-align: center;
+				height: 34px;
+				letter-spacing: 6px;
+			}
+		}
+
+		._text_11 {
+			font-size: 12px;
+		}
+
+		.submit {
+			margin-bottom: 30px;
+
+			a {
+				color: #000000;
+				font-size: 16px;
+
+				&:hover {
+					color: #FFAD20;
+				}
+			}
+		}
+
+		._google {
+			a {
+				display: flex;
+				width: 100%;
+				font-size: 16px;
+				color: #000;
+				height: 55px;
+				border: 1px solid #eee;
+				justify-content: center;
+				align-items: center;
+				border: 1px solid #BEBEBE;
+				border-radius: 15px;
+
+				&:hover {
+					background-color: #eee;
+					border: 1px solid #eeee;
+				}
+			}
+
+			svg {
+				margin: 0 10px;
+			}
+		}
+		// ._register {
+		// 	margin-bottom: 30px;
+		//
+		// 	p {
+		// 		text-align: center;
+		// 		margin-bottom: 18px;
+		// 		font-size: 13px;
+		// 	}
+		// }
+		// ._submit-btn {
+		// 	margin-top: 20px;
+		// }
+		//
+		// label._obs {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	right: 0;
+		// 	height: 42px;
+		// 	width: 60px;
+		// 	display: flex;
+		// 	align-items: center;
+		// 	justify-content: center;
+		// }
+	}
+	// .bk {
+	// 	position: absolute;
+	// 	left: 0;
+	// 	bottom: 0;
+	//
+	// 	._img {
+	// 		position: absolute;
+	// 		left: 95px;
+	// 		bottom: 52px;
+	// 	}
+	// }
+}
+// p {
+// 	color: #495057;
+// }
+//
+// .video {
+// 	max-width: 689px;
+// 	margin: auto;
+// }
+//
+// .example-text {
+// 	.text {
+// 		max-width: 689px;
+// 		margin: auto;
+// 		background-color: #fff;
+// 		padding: 20px;
+// 		border-radius: 10px;
+// 	}
+// }
+
+._login_modal {
+	background-color: transparent;
+	border: none;
+	margin-top: 50px;
+}
+
+.video-section {
+	text-align: center;
+	#player {
+		width: 690px;
+		border-radius: 21px;
+		height: 271px;
+	}
+}
+@media (max-width:1023px) {
+	.auth-site .bk ._img {
+		width: 128px;
+		position: absolute;
+		left: 33px;
+		bottom: 0;
+	}
+}
+@media (max-width:767px) {
+	.auth-site .form-sec {
+		padding: 0 15px 15px;
+	}
+}

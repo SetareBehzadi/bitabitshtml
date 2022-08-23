@@ -1,0 +1,56 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                        TEXT-BOX: X1                                        */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-textbox="x1"] {
+	position: relative;
+	padding: 10px;
+	border: 1px solid #E5E5E5;
+	background-color: $primaryEnColor;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		#{$default-side}: 0;
+		width: 3px;
+		height: 100%;
+		background-color: $txtBodyColor;
+	}
+
+	&._normalize {
+		padding: 20px;
+	}
+
+	&._maximize {
+		padding: 30px;
+	}
+
+	&._ultra {
+		padding: 40px;
+	}
+
+	@mixin palette($name, $color) {
+		&.#{$name} {
+			&:before {
+				background-color: $color;
+			}
+		}
+	}
+
+	@include palette("_primary", $primaryColor);
+	@include palette("_secondary", $secondaryColor);
+	@include palette("_third", $thirdColor);
+	@include palette("_info", $infoColor);
+	@include palette("_success", $successColor);
+	@include palette("_warning", $warningColor);
+	@include palette("_error", $errorColor);
+	@include palette("_light", $primaryEnColor);
+	@include palette("_dark", $shadowColor);
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {}
+	// END VIEWPORT
+}

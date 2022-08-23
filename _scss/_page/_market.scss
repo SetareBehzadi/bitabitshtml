@@ -1,0 +1,270 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: auth                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+._market_x1 {
+	justify-content: space-between;
+}
+
+._market {
+	._bg_x3 {
+		background-color: #fff;
+		box-shadow: 0 3px 35px #00000014;
+		border-radius: 15px;
+
+		&._m_x1 {
+			margin: 11px 0;
+		}
+
+		&._pad_x1 {
+			padding: 30px 19px 10px;
+		}
+	}
+
+	._btn_x1 {
+		background-color: #edc93b6b;
+		border: 1px solid #EECA3D;
+		width: 55px;
+		height: 26px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 11px;
+		margin: auto auto 0;
+
+		&._text-red {
+			color: #F80357;
+		}
+
+		&._text-green {
+			color: #02C076;
+		}
+	}
+
+	._title_sec {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	._search_market {
+		position: relative;
+
+		input {
+			border: none;
+			box-shadow: none;
+			border-bottom: 1px solid #BEBEBE;
+			padding-left: 30px;
+			font-size: 12px;
+		}
+
+		button {
+			position: absolute;
+			left: 0;
+			top: 7px;
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	._logo_coin {
+		padding: 10px 0;
+	}
+
+	table thead th {
+		font-weight: 100;
+		color: #01BEEA;
+		font-size: 12px;
+		// padding: 10px 0;
+	}
+
+	table thead {
+		border-bottom: 1px solid #bebebe;
+	}
+
+	tbody td {
+		a {
+			color: #495057;
+
+			&:hover {
+				color: #01beea;
+			}
+		}
+	}
+
+	table tbody tr {
+		&:last-child {
+			border-bottom: none !important;
+		}
+	}
+
+	._sals {
+		.title_x1 {
+			&::after {
+				background-color: #F84960;
+			}
+		}
+
+		tbody {
+			tr {
+				&:first-child {
+					background-color: #FEE1E5;
+					color: #F84960;
+				}
+			}
+		}
+	}
+
+	._buy {
+		.title_x1 {
+			&::after {
+				background-color: #02C076;
+			}
+		}
+
+		tbody {
+			tr {
+				&:first-child {
+					background-color: #BBFFE6;
+					color: #02C076;
+				}
+			}
+		}
+	}
+
+	._tabel_m1 {
+		padding-bottom: 13px;
+
+		tbody {
+			tr {
+				border-bottom: 1px solid #bebebe !important;
+
+				&:last-child {
+					border-bottom: 1px solid #bebebe !important;
+				}
+			}
+
+			td {
+				padding: 3px 10px !important;
+				// letter-spacing: 1px;
+			}
+		}
+	}
+
+	._trade {
+		&._sale_from {
+			._title_sec {
+				border-color: #F84960;
+			}
+
+			._form_trade ul li label {
+				background-color: #FFE2E6;
+			}
+		}
+
+		._title_sec {
+			border-bottom: 2px solid #02C076;
+			padding: 8px 0;
+
+			._btn_x2 {
+				border-radius: 5px;
+				height: 30px;
+				width: 102px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+
+				.icon-pv-icons-w {
+					font-size: 20px;
+					margin: 0 0 0 5px;
+				}
+
+				&.bg_yellow:hover {
+					background-color: #f5a51a;
+				}
+
+				&._w_x1 {
+					width: 134px;
+					margin-left: 0;
+				}
+			}
+
+			._btn_x3 {
+				display: flex;
+				align-items: center;
+				color: #01373E;
+
+				.icon-pv-icons-x {
+					margin: 0 5px;
+				}
+
+				&:hover {
+					color: #02c076;
+				}
+			}
+		}
+
+		.title_x1 {
+			margin-bottom: 0;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		._form_trade {
+			ul {
+				li {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin: 21px 0;
+
+					input {
+						width: 145px;
+						border: 1px solid #bebebea3;
+						border-radius: 15px 0 0 15px;
+						height: 43px;
+					}
+
+					label {
+						padding: 10px 10px 10px 5px;
+						width: 100%;
+						background-color: #BBFFE6;
+						border-radius: 0 15px 15px 0;
+					}
+				}
+			}
+		}
+
+		._value {
+			font-size: 12px;
+			line-height: 30px;
+		}
+
+		._ct {
+			&:hover {
+				color: #0f812e;
+			}
+		}
+
+		._cta {
+			a {
+				margin: 30px auto 23px 0;
+
+				span {
+					margin: 0 5px;
+					color: #d8a61c;
+				}
+			}
+		}
+	}
+}
+@media (max-width:1023px) {
+	._market {
+		._md_none {
+			display: none;
+		}
+	}
+}
+@media (max-width:767px) {}

@@ -1,0 +1,147 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                  PLYR - VIDEO PLAYER : X1                                  */
+/* ------------------------------------------------------------------------------------------ */
+[data-player="video_x1"] {
+	display: block;
+	border-radius: 10px;
+	transform: perspective(1px) translate3d(0,0,0);
+	backface-visibility: hidden;
+	box-shadow: 0 1px 2px 0 transparentize($shadowColor, .84);
+	overflow: hidden;
+
+	._cover {
+		._title {
+			display: block;
+			position: absolute;
+			top: 100px;
+			#{$default-side}: 0;
+			width: 100%;
+			margin: 0;
+			padding: 20px;
+			line-height: 40px;
+			text-align: center;
+			font-family: "Bold";
+			font-size: 20px;
+			color: $primaryEnColor;
+			z-index: 1;
+		}
+
+		._text {
+			position: absolute;
+			top: 150px;
+			#{$default-side}: 0;
+			width: 100%;
+			margin: 0;
+			padding: 20px;
+			line-height: 30px;
+			text-align: center;
+			font-family: "Bold";
+			font-size: 20px;
+			color: $primaryEnColor;
+			z-index: 1;
+		}
+	}
+
+	video {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.plyr {
+		display: block;
+		font-family: "Light";
+
+		> .plyr__controls {
+			.plyr__controls__item {
+				&.plyr__control {
+					&.plyr__tab-focus,
+					&:hover,
+					&[aria-expanded=true] {
+						background-color: $secondaryColor;
+					}
+
+					&.plyr__tab-focus {
+						box-shadow: 0 0 0 5px transparentize($secondaryColor, .5);
+					}
+				}
+
+				&.plyr__progress__container {
+					.plyr__progress {
+						input[type=range] {
+							color: $secondaryColor;
+						}
+					}
+				}
+
+				&.plyr__time {}
+
+				&.plyr__volume {
+					input[type=range] {
+						color: $secondaryColor;
+					}
+
+					.plyr__control {
+						&.plyr__tab-focus,
+						&:hover,
+						&[aria-expanded=true] {
+							background-color: $secondaryColor;
+						}
+
+						&.plyr__tab-focus {
+							box-shadow: 0 0 0 5px transparentize($secondaryColor, .5);
+						}
+					}
+				}
+
+				&.plyr__menu {
+					.plyr__control {
+						&.plyr__tab-focus,
+						&:hover,
+						&[aria-expanded=true] {
+							background-color: $secondaryColor;
+						}
+
+						&.plyr__tab-focus {
+							box-shadow: 0 0 0 5px transparentize($secondaryColor, .5);
+						}
+					}
+
+					.plyr__menu__container {
+						.plyr__control {
+							&[role=menuitemradio] {
+								&[aria-checked=true] {
+									&:before {
+										background-color: $secondaryColor;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		> .plyr__video-wrapper {
+			.plyr__poster {
+				background-size: cover;
+			}
+		}
+
+		> .plyr__captions {}
+
+		> .plyr__control {
+			padding: 30px;
+			background-color: $secondaryColor;
+			box-shadow: 1px 1px 6px 2px transparentize($shadowColor, .7);
+
+			svg {
+				transform: scale(1.5);
+			}
+
+			&.plyr__tab-focus {
+				box-shadow: 0 0 0 5px transparentize($secondaryColor, .5);
+			}
+		}
+	}
+}

@@ -1,0 +1,247 @@
+.pv-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-family: 'Regular';
+	background: #8D79EA;
+	color: $textBodyColorWhite;
+
+	&._ml {
+		margin-left: 0;
+	}
+
+	&:visited {
+		color: #fff;
+	}
+
+	&._box-shadow {
+		@include box-shadow-two;
+	}
+
+	&._xl {
+		width: 100%;
+		height: 51px;
+		border-radius: 28px;
+	}
+
+	&._xl_x1 {
+		width: 100%;
+		height: 55px;
+		border-radius: 15px;
+	}
+
+	&._lg {
+		width: 254px;
+		height: 41px;
+		border-radius: 21px;
+	}
+	&._lg_1 {
+		width: 209px;
+		height: 48px;
+		border-radius: 21px;
+	}
+
+	&._lg_x1 {
+		width: 233px;
+		height: 54px;
+		border-radius: 32px;
+	}
+
+	&._md {
+		width: 141px;
+		height: 40px;
+		border-radius: 31px;
+	}
+
+	&._md_2 {
+		width: 162px;
+		height: 40px;
+		border-radius: 40px;
+		font-size: 12px;
+	}
+
+	&._md_3 {
+		width: 100%;
+		height: 45px;
+		border-radius: 40px;
+		font-size: 16px;
+	}
+
+	&._sm {
+		width: 113px;
+		height: 28px;
+		font-size: 12px;
+		border-radius: 15px;
+	}
+
+	&._sm_1 {
+		width: 137px;
+		height: 34px;
+		font-size: 12px;
+		border-radius: 15px;
+	}
+
+	&._sm_2 {
+		width: 137px;
+		height: 37px;
+		border-radius: 15px;
+	}
+
+	&._sm_3 {
+		width: 80px;
+		height: 26px;
+		border-radius: 10px;
+	}
+
+	&._text_white {
+		color: #fff;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	&._blue {
+		background-color: $linkBackColorPrimary;
+
+		&:hover {
+			background-color: $linkBackColorHoverPrimary;
+		}
+	}
+
+	&._purple {
+		background-color: $linkBackColorSecondary;
+
+		&:hover {
+			background-color: $linkBackColorHoverSecondary;
+		}
+	}
+
+	&._green {
+		background-color: #12A73A;
+
+		&:hover {
+			background-color: #0f812e;
+		}
+	}
+
+	&._green_dark {
+		background-color: #005964;
+
+		&:hover {
+			background-color: #005964;
+		}
+	}
+
+	&._green_light {
+		background: #02C076;
+	}
+
+	&._red {
+		background-color: #F80357;
+
+		&:hover {
+			background-color: #F80357;
+		}
+	}
+
+	&._gary {
+		background-color: #6e6e6e;
+
+		&:hover {
+			background-color: #535353;
+		}
+	}
+
+	&._yellow {
+		background-color: $linkBackColorthird;
+
+		&:hover {
+			background-color: $linkBackColorHoverthird;
+		}
+	}
+
+	&._blue_h_yellow {
+		background-color: $forthColor;
+
+		&:hover {
+			background-color: $thirdColor;
+		}
+	}
+
+	&._w-100 {
+		width: 100%;
+	}
+
+	&._outline {
+		background-color: $transparent !important;
+		border: 1px solid;
+
+		&._blue {
+			border-color: $linkBackColorPrimary;
+			color: $linkBackColorPrimary;
+
+			&:hover {
+				// background-color: $linkBackColorHoverPrimary !important;
+				background-color: $linkBackColorPrimary !important;
+				color: $textBodyColorWhite;
+			}
+		}
+
+		&._purple {
+			border-color: $linkBackColorSecondary;
+			color: $linkBackColorSecondary;
+
+			&:hover {
+				// background-color: $linkBackColorHoverSecondary !important;
+				background-color: $linkBackColorSecondary !important;
+				color: $textBodyColorWhite;
+			}
+		}
+
+		&._green-ligth {
+			border-color: #02C076;
+			color: #02C076;
+
+			&.active,
+			&:hover {
+				// background-color: $linkBackColorHoverSecondary !important;
+				background-color: #02C076 !important;
+				color: $textBodyColorWhite;
+			}
+		}
+
+		&._green {
+			border-color: #005964;
+			color: #005964;
+
+			&:hover {
+				// background-color: $linkBackColorHoverSecondary !important;
+				background-color: #005964 !important;
+				color: $textBodyColorWhite;
+			}
+		}
+
+		&._red {
+			border-color: #F84960;
+			color: #F84960;
+
+			&.active,
+			&:hover {
+				// background-color: $linkBackColorHoverSecondary !important;
+				background-color: #F84960 !important;
+				color: $textBodyColorWhite;
+			}
+		}
+	}
+
+	&:hover {
+		color: $textBodyColorWhite;
+	}
+
+	&:visited {
+		color: $textBodyColorWhite;
+	}
+}
+// ----------------------------------------------------------------------------------------------

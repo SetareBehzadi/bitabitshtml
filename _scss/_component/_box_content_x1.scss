@@ -1,0 +1,128 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  X1                                          */
+/* ------------------------------------------------------------------------------------------ */
+
+.box-content-x1 {
+	padding-bottom: 115px;
+	position: relative;
+
+	._container {
+		max-width: 1170px !important;
+    margin: auto;
+	}
+
+	.box {
+		height: 789px;
+		position: relative;
+		background-image: linear-gradient(#005B74, #1CACD8);
+	}
+	._img {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+	._img-2 {
+		position: absolute;
+    z-index: 1;
+    right: -300px;
+    top: -127px;
+    width: 71%;
+	}
+	.row {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		height: 789px;
+	}
+	.content {
+		max-width: 359px;
+		z-index: 1;
+		text-align: -webkit-left;
+		h1 {
+			font-family: "Bold";
+			font-size: 35px;
+			text-align: end;
+			color: #fcfcfc;
+			letter-spacing: -1.5px;
+		}
+		p {
+			font-size: 16px;
+			color: $textBodyColorWhite;
+		}
+		a {
+			  margin-top: 22px;
+		}
+	}
+
+}
+
+@media (max-width:1399px) {
+	.box-content-x1 {
+
+	}
+}
+@media (max-width:1199px) {
+	.box-content-x1 {
+			.box {
+		     height: 580px;
+		 }
+		 .row {
+			 height: 580px;
+		}
+		.content {
+		    margin-left: 130px;
+		}
+		 ._img-2 {
+	    right: -162px;
+	    top: 0;
+		}
+	}
+}
+@media (max-width:1023px) {
+	.box-content-x1 {
+		    padding-bottom: 32px;
+				._img-2 {
+			    top: 21px;
+			}
+			.content {
+		     margin-left: 87px;
+				 max-width: 296px;
+				 h1 {
+					 font-size: 23px;
+					 letter-spacing: 0;
+				}
+				p {
+					 font-size: 14px;
+				}
+		 }
+		 .box {
+		 height: 510px;
+		}
+		.row {
+	    height: 405px;
+		}
+	}
+}
+@media (max-width:767px) {
+	.box-content-x1 {
+		    padding-bottom: 32px;
+			._img {
+				display: none;
+		}
+		.content {
+	     max-width: 296px;
+	     margin: auto !important;
+	 }
+	}
+}
+@media (max-width:639px) {
+	.box-content-x1 {
+		._img-2 {
+			top: 91%;
+			width: 115%;
+	    transform: translate(10px, -80%);
+		}
+	}
+}

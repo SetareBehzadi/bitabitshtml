@@ -1,0 +1,58 @@
+.py-badge {
+	width: 81px;
+	height: 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	font-family: "Regular";
+	color: #fff;
+	border-radius: 4px;
+
+	&._c_red {
+		color: #F84960;
+	}
+
+	&._lg {
+		width: 179px;
+		height: 29px;
+		font-size: 12px;
+		font-size: "Bold";
+		border-radius: 15px;
+		font-weight: bold;
+		margin: 20px 0;
+	}
+
+	&._purple {
+		background-color: $linkBackColorSecondary;
+	}
+
+	&._green {
+		background-color: #12A73A;
+	}
+
+	&._m-3 {
+		margin: 0 3px;
+	}
+
+	&._red {
+		background-color: #ff0000;
+	}
+
+	&._radius_x1 {
+		border-radius: 20px;
+	}
+
+	&._radius_x2 {
+		border-radius: 15px;
+	}
+	&._yellow {
+		background-color: #FFDF85;
+	}
+	&._green-ligth {
+		background-color: #02C076;
+	}
+	&._dark {
+		background-color: #495057;
+	}
+}

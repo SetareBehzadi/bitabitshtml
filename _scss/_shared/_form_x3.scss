@@ -1,0 +1,35 @@
+.form_x3 {
+	.form-item {
+		display: flex;
+		align-items: center;
+		margin:16px 0;
+
+		label {
+			width: 185px;
+			background-color: #BEBEBE;
+			height: 55px;
+			border-radius: 0 15px 15px 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-left: 8px solid #ecf2fd;
+			color: #495057;
+		}
+		input {
+			height: 55px;
+			border-radius: 15px 0 0 15px;
+			border: none;
+		}
+		select {
+    		border-radius: 15px 0 0 15px;
+			&:focus {
+				border: none;
+			}
+		}
+	}
+	p , span{
+		color: #495057;
+	}
+}
+@media (max-width:1199px) {}
+@media (max-width:767px) {}

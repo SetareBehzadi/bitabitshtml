@@ -1,0 +1,221 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: auth                                         */
+/* ------------------------------------------------------------------------------------------ */
+.form-element {
+  h3 {
+    color: #005964;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+    margin-top: 45px;
+
+    &:after {
+        content: '';
+        width: 70px;
+        height: 2px;
+        background-color: #FFAD20;
+        position: absolute;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+  }
+  li {
+    // position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #00000005;
+    border-radius: 15px;
+    height: 55px;
+    border: 1px solid #fff;
+    input[readonly], textarea[readonly] {
+      background-color: #fff;
+      cursor: default;
+    }
+    input {
+      margin-bottom: 0;
+      height: 100%;
+      text-align: center;
+      border: none;
+      box-shadow: none;
+      font-size: 14px;
+      background-color: #f3f7f2;
+      color: #495057;
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+    }
+    label {
+      // position: absolute;
+      // top: 50%;
+      // #{$default-side}: 20px;
+      // transform: translate(0 , -50%);
+      width: 177px;
+      padding: 14px 16px 14px 0px;
+    }
+    span {
+      margin: 0 30px;
+    }
+    input {
+      // padding-right: 126px;
+    }
+  }
+  &._white {
+    li {
+      input {
+        background-color: #fff;
+      }
+    }
+  }
+  ._img {
+    text-align: center;
+  }
+  ._more {
+    color: #02C076;
+    font-size: 14px;
+    padding: 0 62px;
+    margin-top: 13px;
+    display: block;
+  }
+
+  &._edit_form {
+	  .icon-pv-icons-al {
+		  display: none;
+	  }
+  }
+}
+
+.table_x2 {
+  margin-bottom: 40px;
+  table {
+    background-color: #fff;
+    border-radius: 15px;
+    th {
+      font-family: 'Regular';
+      color: #BEBEBE;
+      font-weight: 100;
+    }
+    tbody {
+      background-color: transparent;
+    }
+  }
+
+}
+
+.add-card {
+  font-size: 12px;
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+}
+
+.add_new_card {
+  input {
+    height: 34px;
+    border: none;
+    background-color: #BEBEBE;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    &:focus {
+      background-color: #BEBEBE;
+      border: none;
+    }
+  }
+  button {
+    width: 36px;
+    height: 32px;
+    background: red;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &._add_new {
+        background-color: #02C076;
+        margin: 0 8px;
+        &:hover {
+          background-color: #04B570;
+        }
+    }
+    &._cancel {
+        background-color: #F80357;
+        &:hover {
+          background-color: #EB0453;
+        }
+    }
+  }
+}
+
+
+.auth-nav {
+  max-width: 906px;
+  margin: auto;
+    ._flex {
+        align-items: center;
+    }
+    ._b_right {
+        width: 65px;
+        height: 65px;
+        background: #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 3px solid #f1f1f1;
+        border-left-color: #1cacd8;
+        margin-left: -21px;
+        z-index: 1;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+      background: #1CACD8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      border-radius: 50%;
+    }
+    ._text {
+      font-size: 18px;
+      color: #005964;
+      width: 195px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #1CACD8;
+      border-radius: 30px;
+    }
+    ._active {
+      ._b_right {
+          border-left-color: #FFAD20;
+      }
+      .icon {
+        background: #FFAD20;
+      }
+      ._text {
+        border: 3px solid #ffad20;
+      }
+    }
+}
+
+@media (max-width:1199px){
+
+}
+
+@media (max-width:1023px){
+
+}
+
+@media (max-width:767px){
+  .auth-nav ._flex {
+    justify-content: center;
+  }
+}

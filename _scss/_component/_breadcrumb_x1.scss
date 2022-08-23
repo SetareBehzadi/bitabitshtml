@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                       BREADCRUMB: X1                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-breadcrumb="x1"] {
+	display: flex;
+	flex-flow: row-reverse nowrap;
+	ul {
+		li {
+			position: relative;
+			line-height: 30px;
+			font-family: "Regular";
+			font-size: 12px;
+			color: lighten($txtBodyColor, 35.35);
+
+			&:not(:last-child) {
+				padding-#{$opposite-side}: 30px;
+
+				&:before {
+					content: if($dir, "\e925", "\e926");
+					display: block;
+					position: absolute;
+					top: 0;
+					#{$opposite-side}: 0;
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					font-family: "icomoon";
+					font-size: 15px;
+					color: $secondaryColor;				}
+			}
+
+			.disabled {}
+
+			a {
+				display: block;
+				color: $txtBodyColor;
+
+				&:hover {
+					color: $secondaryColor;
+				}
+			}
+
+			span {
+				display: block;
+				cursor: default;
+			}
+
+		}
+	}
+}

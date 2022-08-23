@@ -1,0 +1,243 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         BUTTON: X2                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+$btnX2_gutter: 2px;
+$btnX2_radius: 4px;
+$btnX2_height: 42px;
+$btnX2_radius_2: 25px;
+
+[data-button="x2"] {
+
+
+/* --------------------------------------    GENERAL   -------------------------------------- */
+	display: table;
+	position: relative;
+	padding: $btnX2_gutter;
+	border-radius: $btnX2_radius;
+	transform: perspective(1px) translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	cursor: pointer;
+	overflow: hidden;
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		#{$default-side}: 0;
+		width: 30%;
+		background-color: lighten($txtBodyColor, 45.45);
+		border-top-#{$default-side}-radius: $btnX2_radius;
+		border-bottom-#{$default-side}-radius: $btnX2_radius;
+		z-index: 1;
+	}
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		#{$default-side}: 0;
+		#{$opposite-side}: 0;
+		background-color: lighten($txtBodyColor, 45.45);
+		border-top-#{$opposite-side}-radius: $btnX2_radius;
+		border-bottom-#{$opposite-side}-radius: $btnX2_radius;
+		transform: perspective(1px) translate3d(100%, 0, 0);
+		transition: transform .3s ease 0s;
+		z-index: 1;
+	}
+	._wrap {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: $btnX2_height;
+		margin: 0;
+		padding-#{$opposite-side}: 20px;
+		padding-#{$default-side}: 20px;
+		background-color: $primaryEnColor;
+		border-radius: $btnX2_radius - 1;
+		transform: perspective(1px) translate3d(0, 0, 0);
+		backface-visibility: hidden;
+		// transition: background .3s ease 0s, color .3s ease 0s;
+		font-family: "Regular";
+		font-style: normal;
+		color: $txtBodyColor;
+		z-index: 3;
+		* {
+			margin-#{$opposite-side}: 10px;
+			height: $btnX2_height;
+			line-height: $btnX2_height;
+			white-space: nowrap;
+			&:last-child {
+				margin-#{$opposite-side}: 0 !important;
+			}
+		}
+		._icon {
+			font-size: 15px;
+		}
+		._text {
+			font-size: 15px;
+		}
+	}
+	&._opposite {
+		&:before {
+			#{$default-side}: unset;
+			#{$opposite-side}: 0;
+			border-top-#{$default-side}-radius: 0;
+			border-bottom-#{$default-side}-radius: 0;
+			border-top-#{$opposite-side}-radius: $btnX2_radius;
+			border-bottom-#{$opposite-side}-radius: $btnX2_radius;
+		}
+		&:after {
+			border-top-#{$opposite-side}-radius: 0;
+			border-bottom-#{$opposite-side}-radius: 0;
+			border-top-#{$default-side}-radius: $btnX2_radius;
+			border-bottom-#{$default-side}-radius: $btnX2_radius;
+			transform: perspective(1px) translate3d(-100%, 0, 0);
+		}
+	}
+	&._both {
+		&:before {
+			width: 30px;
+		}
+		&:after {
+			#{$default-side}: unset;
+			#{$opposite-side}: 0;
+			width: 30px;
+			border-top-#{$opposite-side}-radius: 0;
+			border-bottom-#{$opposite-side}-radius: 0;
+			transform: perspective(1px) translate3d(0, 0, 0);
+		}
+		._wrapOut {
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				#{$default-side}: 50%;
+				#{$opposite-side}: 0;
+				background-color: lighten($txtBodyColor, 45.45);
+				transform: scaleX(0);
+				transform-origin: top $opposite-side;
+				transition: transform 0.3s;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				#{$default-side}: 0;
+				#{$opposite-side}: 50%;
+				background-color: lighten($txtBodyColor, 45.45);
+				transform: scaleX(0);
+				transform-origin: top $default-side;
+				transition: transform 0.3s;
+			}
+		}
+	}
+	&._rounded {
+		border-radius: $btnX2_radius_2;
+		&:after {
+			border-top-#{$default-side}-radius: 0;
+			border-bottom-#{$default-side}-radius: 0;
+			border-top-#{$opposite-side}-radius: $btnX2_radius_2;
+			border-bottom-#{$opposite-side}-radius: $btnX2_radius_2;
+		}
+		._wrap {
+			border-radius: $btnX2_radius_2 - 1;
+		}
+		&._opposite {
+			&:before {
+				border-top-#{$opposite-side}-radius: $btnX2_radius_2;
+				border-bottom-#{$opposite-side}-radius: $btnX2_radius_2;
+			}
+			&:after {
+				border-top-#{$default-side}-radius: $btnX2_radius_2;
+				border-bottom-#{$default-side}-radius: $btnX2_radius_2;
+			}
+		}
+	}
+	&:hover,
+	&:focus {
+		&:after {
+			transform: perspective(1px) translate3d(0, 0, 0);
+		}
+		&._both {
+			._wrapOut {
+				&:before,
+				&:after {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+
+
+/* --------------------------------------  SCHEME: x1  -------------------------------------- */
+	@mixin colorPalette($name, $color1) {
+		&.#{$name} {
+			&:before,
+			&:after {
+				background-color: $color1;
+			}
+			._wrap {
+				background-color: $primaryEnColor;
+				color: $txtBodyColor;
+			}
+			&._both {
+				._wrapOut {
+					&:before,
+					&:after {
+						background-color: $color1;
+					}
+				}
+			}
+		}
+	}
+
+	@include colorPalette("_primary", $primaryColor);
+	@include colorPalette("_secondary", $secondaryColor);
+	@include colorPalette("_third", $thirdColor);
+	@include colorPalette("_info", $infoColor);
+	@include colorPalette("_success", $successColor);
+	@include colorPalette("_warning", $warningColor);
+	@include colorPalette("_error", $errorColor);
+
+
+/* --------------------------------------  SCHEME: x2  -------------------------------------- */
+	@mixin glassPalette($name, $color1, $degree) {
+		&._glass {
+			._wrap {
+				background-color: lighten($txtBodyColor, 65.65);
+			}
+			&.#{$name} {
+				._wrap {
+					background-color: lighten($color1, $degree);
+				}
+			}
+		}
+	}
+
+	@include glassPalette("_primary", $primaryColor, 75);
+	@include glassPalette("_secondary", $secondaryColor, 25.25);
+	@include glassPalette("_third", $thirdColor, 65);
+	@include glassPalette("_info", $infoColor, 50);
+	@include glassPalette("_success", $successColor, 55);
+	@include glassPalette("_warning", $warningColor, 45);
+	@include glassPalette("_error", $errorColor, 35);
+
+
+/* --------------------------------------   BALANCED   -------------------------------------- */
+	&._balanced {}
+
+
+/* --------------------------------------    DISABLE   -------------------------------------- */
+	&._disable {}
+
+
+}/* END [data-button="x2"] */

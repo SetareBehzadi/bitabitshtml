@@ -1,0 +1,24 @@
+.input_x2 {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #00000005;
+    border-radius: 15px;
+    height: 55px;
+    border: 1px solid #fff;
+
+    &._sm {
+      height: 40px;
+    }
+
+	&._file {
+		display: block;
+	    padding: 10px 15px;
+	    height: 46px;
+	}
+
+	&._shadow_x1 {
+		box-shadow: 0 3px 35px #00000008;
+	}
+}

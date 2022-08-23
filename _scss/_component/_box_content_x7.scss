@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  X1                                          */
+/* ------------------------------------------------------------------------------------------ */
+.box-content-x7 {
+	padding: 0 15px;
+	background-image: url("../media/cp-img/back-4.png");
+	background-repeat: no-repeat;
+	background-position: -84px;
+	background-origin: padding-box;
+	padding: 67px 0;
+	background-size: 49%;
+
+	._container {
+		max-width: 1192px !important;
+    margin: auto;
+	}
+	._flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media (max-width:1199px) {
+	.box-content-x7 {
+		._container {
+			padding: 0 15px;
+		}
+		._flex {
+			img {
+				max-width: 300px;
+			}
+		}
+	}
+}

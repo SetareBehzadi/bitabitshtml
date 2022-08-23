@@ -1,0 +1,311 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                   MAIN MENU:  HORIZONTAL PROFILE                                   */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-menu="profile"] {
+	/* ------------------------------------    GENERAL   ------------------------------------ */
+	padding: 16px 0;
+	height: 98%;
+
+	> ul {
+		> li {
+			.icon-chat-m,
+			.icon-exit-m,
+			.icon-notification,
+			.icon-purchases-m,
+			.icon-send-m {
+				font-size: 22px;
+			}
+
+			.icon-chat-m,
+			.icon-exit-m,
+			.icon-notification,
+			.icon-purchases-m,
+			.icon-send-m {
+				font-size: 20px;
+			}
+
+			> a {
+				position: relative;
+				display: block;
+				padding: 11px 10px;
+				color: $textColorOne;
+				border-radius: 7px;
+				margin-#{$opposite-side}: 6px;
+
+				span {
+					font-size: 24px;
+					vertical-align: bottom;
+					margin: 0 9px;
+				}
+
+				svg {
+						margin: 0 9px;
+					path {
+						fill:#6e748e;
+					}
+				}
+
+				&:hover {
+					background-color: #8d79ea2e;
+
+					&:before {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					#{$default-side}: -5px;
+					top: 0;
+					height: 100%;
+					width: 5px;
+					background: #8D79EA;
+					border-radius: 5px;
+					visibility: hidden;
+					opacity: 0;
+					transition: background 0.3s ease 0s,color 0.3s ease 0s;
+				}
+			}
+
+			&.has-child {
+				> ul {
+					padding: 0 40px;
+					margin: 0;
+				}
+
+				a {
+					position: relative;
+					display: block;
+					padding: 11px 10px;
+					color: $textColorOne;
+					border-radius: 7px;
+					margin-#{$opposite-side}: 6px;
+				}
+
+				> a {
+					&.active,
+					&:after {
+						content: "";
+						color: #6893ee;
+						font-family: "icomoon" !important;
+						position: absolute;
+						left: 3px;
+						font-size: 6px;
+						top: 50%;
+						transform: translate(10px, -50%);
+					}
+				}
+
+				li.has-child {
+					> a {
+						&:after {
+							content: "";
+							color: #6893ee;
+							font-family: "icomoon" !important;
+							position: absolute;
+							right: 0;
+							font-size: 5.5px;
+							top: 50%;
+							transform: translate(10px, -64%) rotate(90deg);
+						}
+					}
+
+					> a {
+						border-bottom: 1px solid #E9E9E9;
+
+						&:hover {
+							color: #8D79EA;
+
+							&:after {
+								color: #8D79EA;
+							}
+						}
+					}
+
+					> ul {
+						visibility: hidden;
+						opacity: 0;
+						height: 0;
+						transition: all 0.5s;
+						margin: 0;
+
+						a {
+							border-bottom: 1px solid #E9E9E9;
+							border-radius: 0;
+
+							&:hover {
+								background-color: #F6F4FE;
+							}
+						}
+					}
+
+					&.active {
+						> a {
+							color: #8D79EA;
+
+							&:before {
+								color: #8D79EA;
+							}
+						}
+
+						ul {
+							visibility: visible;
+							opacity: 1;
+							height: 100%;
+						}
+					}
+				}
+
+				ul {
+					visibility: hidden;
+					opacity: 0;
+					height: 0;
+					transition: all 0.5s;
+				}
+
+				&.active {
+					> a {
+						background-color: #8d79ea2e;
+
+						&:before {
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+
+					ul {
+						visibility: visible;
+						opacity: 1;
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+/* END [data-menu="horizontal"] */
+
+.nav-two {
+	li {
+		position: relative;
+
+		a {
+			color: $textColorOne;
+
+			&:hover {
+				color: $secondaryColor;
+			}
+		}
+
+		.icon-user-blue {
+			background-color: $secondaryColor;
+			padding: 6px;
+			border-radius: 50%;
+			font-size: 13px;
+
+			&:before {
+				color: #fff;
+			}
+		}
+
+		.icon-next {
+			font-size: 6px;
+			margin: 0 10px;
+		}
+
+		&:hover {
+			.user_menu {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	.user_menu {
+		margin: 0;
+		position: absolute;
+		#{$default-side}: 0;
+		top: 100%;
+		background-color: transparent;
+		width: 100%;
+		padding: 10px 0;
+		visibility: hidden;
+		opacity: 0;
+
+		li {
+			background-color: #fff;
+		}
+
+		a {
+			color: $textColorOne;
+			padding: 10px;
+			margin: 0 !important;
+			display: block;
+
+			&:hover {
+				background-color: #8d79ea2e;
+
+				&:before {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				right: -5px;
+				top: 0;
+				height: 100%;
+				width: 5px;
+				background: #8d79ea;
+				border-radius: 5px;
+				visibility: hidden;
+				opacity: 0;
+				transition: background 0.3s ease 0s,color 0.3s ease 0s;
+			}
+		}
+	}
+}
+.mobile-menu-icon {
+	display: none;
+}
+
+@media (max-width:1023px) {
+	.mobile-menu-icon {
+		display: block;
+	}
+	.logo {
+		img {
+			width: 85px;
+		}
+	}
+	[data-menu="profile"] {
+		display: none;
+	}
+
+	#off_canvas_right {
+		width: 300px;
+
+		[data-menu="profile"] {
+			display: block;
+			min-height: 700px;
+			border-bottom: 0;
+			margin-bottom: 0;
+			box-shadow: none;
+		}
+	}
+	.nav-two {
+		button {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+		.name {
+			display: none;
+		}
+	}
+}

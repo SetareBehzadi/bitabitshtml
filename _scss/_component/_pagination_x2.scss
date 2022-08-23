@@ -1,0 +1,75 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                       PAGINATION: X1                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+$minWidth: 40px;
+
+.woocommerce-pagination {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+    padding: 30px;
+	> ul {
+		display: flex;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		border-radius: 18px;
+		background-color: #ECECEC;
+
+		> li {
+			list-style: none outside;
+			line-height: 30px;
+			text-align: center;
+			font-size: 14px;
+			color: $txtBodyColor;
+			cursor: default;
+
+			> span {
+				display: block;
+				min-width: $minWidth;
+				border-radius: 18px;
+				&.current {
+					background-color: #DBDBDB;
+				}
+			}
+
+			> a {
+				display: block;
+				min-width: $minWidth;
+				border-radius: 18px;
+				line-height: 30px;
+				text-align: center;
+				font-size: 14px;
+				color: $txtBodyColor;
+
+				&.next,
+				&.prev {
+					position: absolute;
+					color: $transparent;
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+
+				&.prev {
+					#{$default-side}: -25px;
+					transform: rotate(-5deg);
+					background-image: url("../_upload/pagination-arrow.svg");
+				}
+
+				&.next {
+					#{$opposite-side}: -25px;
+					transform: rotate(173deg);
+					background-image: url("../_upload/pagination-arrow.svg");
+				}
+			}
+
+			&.disabled {}
+
+			&.ellipsis {
+				background-color: $transparent;
+				box-shadow: 0 0 0 0 transparentize($shadowColor, 1);
+			}
+		}
+	}
+}

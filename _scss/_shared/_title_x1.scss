@@ -1,0 +1,57 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         TITLE:  X1                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+.title_x1 {
+	color: #005964;
+	font-size: 18px;
+	position: relative;
+	padding-bottom: 8px;
+	margin-bottom: 18px;
+	margin-top: 45px;
+
+	 &::after {
+		content: "";
+    width: 70px;
+    height: 2px;
+    background-color: #ffad20;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+	}
+	&:before {
+
+	}
+	&::after {
+
+	}
+}
+
+.title_x2 {
+	color: #1CACD8;
+	font-size: 18px;
+	position: relative;
+	padding-bottom: 8px;
+	margin-bottom: 18px;
+	margin-top: 45px;
+
+	//  &::after {
+	// 	content: "";
+  //   width: 70px;
+  //   height: 2px;
+  //   background-color: #ffad20;
+  //   position: absolute;
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+	//
+	// }
+	&:before {
+
+	}
+	&::after {
+
+	}
+}

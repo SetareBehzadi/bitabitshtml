@@ -1,0 +1,259 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                   MAIN MENU:  HORIZONTAL                                   */
+/* ------------------------------------------------------------------------------------------ */
+[data-menu="horizontal"] {
+	/* ------------------------------------    GENERAL   ------------------------------------ */
+	display: flex;
+
+	ul {
+		position: relative;
+		margin: 0;
+
+		li {
+			list-style: none outside none;
+
+			a {
+				display: block;
+				position: relative;
+				padding: 10px !important;
+		
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+	/* ------------------------------------   LEVEL 01   ------------------------------------ */
+	> ul {
+		display: flex;
+
+		> li {
+			padding: 0;
+			padding-#{$opposite-side}: 5px;
+			padding-#{$default-side}: 10px;
+			background-color: $transparent;
+
+			> a {
+				> span {
+					line-height: 50px;
+					font-family: "Regular";
+					font-size: 14px;
+					@if $DIRECTION == ltr {
+						text-transform: capitalize;
+						font-weight: bold;
+					}
+					color: $txtHeaderColor;
+				}
+			}
+
+			&._parent {
+				> a {
+					padding-#{$opposite-side}: 5px;
+
+					&:before {
+						content: "\e93d";
+						position: absolute;
+						top: 0;
+						#{$opposite-side}: 0;
+						line-height: 24px;
+						font-family: "icomoon";
+						font-size: 6px;
+						color: $txtHeaderColor;
+						z-index: 999;
+					}
+				}
+			}
+
+			&._active,
+			&:hover {
+				background-color: $transparent;
+
+				> a {
+					> span {
+						color: $primaryColor;
+					}
+				}
+
+				&._parent {
+					> a {
+						&:before {
+							color: $primaryColor;
+						}
+					}
+				}
+			}
+		}
+
+		> ._parent {
+			> .level_n {
+				top: 100%;
+				#{$default-side}: 0;
+			}
+		}
+	}
+	/* ------------------------------------     BASIC    ------------------------------------ */
+	._basic {
+		position: relative;
+
+		.level_n {
+			display: none;
+			position: absolute;
+			top: 0;
+			#{$default-side}: 100%;
+			min-width: 195px;
+			background-color: $primaryEnColor;
+			border-radius: 2px;
+			box-shadow: 0 1px 4px -1px transparentize($shadowColor, .86);
+			z-index: 999;
+
+			> li {
+				padding: 0 15px;
+
+				> a {
+					> span {
+						white-space: nowrap;
+						line-height: 45px;
+						@if $DIRECTION == rtl {
+							font-size: 14px;
+						} @else {
+							text-transform: capitalize;
+						}
+						color: $txtBodyColor;
+					}
+				}
+
+				&._parent {
+					position: relative;
+					padding-#{$opposite-side}: 0;
+
+					> a {
+						padding-#{$opposite-side}: 20px;
+
+						&:before {
+							content: "\e915";
+							position: absolute;
+							top: 0;
+							#{$opposite-side}: 5px;
+							line-height: 45px;
+							font-family: "icomoon";
+							font-size: 14px;
+							color: $txtBodyColor;
+							z-index: 999;
+						}
+					}
+				}
+
+				&:hover {
+					> a {
+						> span {
+							color: $primaryColor;
+						}
+					}
+
+					&._parent {
+						> a {
+							&:before {
+								color: $primaryColor;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	/* ------------------------------------     MEGA     ------------------------------------ */
+	._mega {
+		position: static !important;
+
+		._megaWrapper {
+			display: none;
+			position: absolute;
+			top: 100%;
+			#{$default-side}: 0;
+			width: auto;
+			min-width: 600px;
+			max-width: 100%;
+			background-color: $primaryEnColor;
+			border-bottom-#{$default-side}-radius: 15px;
+			border-bottom-#{$opposite-side}-radius: 15px;
+			box-shadow: 0 1px 4px -1px transparentize($shadowColor, .86);
+			z-index: 999;
+
+			> ul {
+				display: flex;
+				padding: 10px;
+				min-height: 230px;
+
+				> li {
+					flex-grow: 1;
+					padding: 0 10px;
+
+					&:not(._parent) {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						a {
+							cursor: default;
+							pointer-events: none;
+
+							img {
+								display: block;
+								margin-top: 30%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		._parent {
+			> a {
+				display: none;
+				cursor: default;
+
+				> span {
+					line-height: 30px;
+					font-family: "Regular";
+					font-size: 14px;
+					color: $txtBodyColor;
+				}
+			}
+
+			> ul {
+				> li {
+					display: flex;
+
+					&:before {
+						content: "\2022";
+						display: block;
+						width: 20px;
+						height: 30px;
+						line-height: 38px;
+						font-size: 30px;
+						font-weight: bold;
+						color: $secondaryColor;
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					> a {
+						color: $txtBodyColor;
+
+						> span {
+							line-height: 30px;
+							font-size: 14px;
+						}
+
+						&:hover {
+							color: $secondaryColor;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* END [data-menu="horizontal"] */

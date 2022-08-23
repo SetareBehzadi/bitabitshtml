@@ -1,0 +1,484 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  X3                                          */
+/* ------------------------------------------------------------------------------------------ */
+
+.box-content-x3 {
+	background-image: url("../media/cp-img/back-3.png");
+	background-position: 132%;
+	background-size: 66%;
+	background-repeat: no-repeat;
+	margin: 140px 0;
+	padding: 100px 15px 0;
+	position: relative;
+
+	.img {
+		position: relative;
+
+		.shape-x3 {
+			position: absolute;
+			right: 57%;
+			top: 58%;
+			transform: translate(50%, -50%);
+		}
+
+		img {
+			max-width: 114%;
+		}
+	}
+
+	.trade {
+		@include box-shadow-three;
+		padding: 87px;
+		border-radius: 72px;
+		margin: 50px auto;
+		// overflow: hidden;
+		.listLine {
+			width: 100%;
+			border-bottom: 1px solid #AEAEAE;
+			margin-bottom: 38px;
+
+			li {
+				display: inline-block;
+				width: 49%;
+				text-align: center;
+				font-size: 16px;
+				font-family: "Bold";
+				padding: 17px;
+				margin-bottom: -3px;
+				// border-bottom: 5px solid;
+				cursor: pointer;
+
+				a {
+					color: #AEAEAE;
+				}
+
+				&.active,
+				&:hover {
+					border-bottom: 5px solid #8D79EA;
+
+					a {
+						color: #8D79EA;
+					}
+				}
+			}
+		}
+
+		.form {
+			.sec-one {
+				display: flex;
+				margin-bottom: 20px;
+
+				input {
+					margin-bottom: 0;
+				}
+
+				.input_x1 {
+					margin-right: -35px;
+				}
+			}
+
+			.sec-two {
+				display: flex;
+				margin-bottom: 20px;
+
+				._amount {
+					border: 1px solid #8D79EA;
+					background-color: #F2EFFF;
+					height: 61px;
+					text-align: center;
+					width: 60%;
+					border-radius: 23px;
+					z-index: 1;
+					margin-bottom: 0;
+					direction: ltr;
+				}
+
+				._unit {
+					border-radius: 23px;
+					display: flex;
+					width: 49%;
+					justify-content: center;
+					align-items: center;
+					border-color: #cdf;
+					margin-right: -32px;
+				}
+			}
+
+			.sec-three {
+				ul {
+					justify-content: space-between;
+					align-items: center;
+
+					.pv-link {
+						width: 180px;
+						height: 50px;
+						border-radius: 30px;
+					}
+				}
+			}
+
+			.pv_select2 {
+				width: 145%;
+			}
+
+			input {
+				// height: 61px;
+			}
+		}
+	}
+}
+@media (max-width:1199px) {
+	.box-content-x3 {
+		margin: 0 0 140px;
+		padding: 40px 15px 0;
+
+		> .row {
+			.columns:first-child {
+				align-self: center;
+			}
+		}
+
+		.img {
+			.shape-x3 {}
+
+			img {
+				width: 80%;
+			}
+		}
+
+		.trade {
+			padding: 50px;
+			margin: 0;
+
+			.listLine {
+				li {
+					a {}
+
+					&.active,
+					&:hover {
+						a {}
+					}
+				}
+			}
+
+			.form {
+				.sec-one {
+					input {}
+
+					.input_x1 {}
+				}
+
+				.sec-two {
+					._amount {}
+
+					._unit {}
+				}
+
+				.sec-three {
+					ul {
+						.pv-link {}
+					}
+				}
+
+				.pv_select2 {}
+
+				input {}
+			}
+		}
+	}
+}
+@media (max-width:1023px) {
+	.box-content-x3 {
+		margin: 0 0 140px;
+		padding: 40px 15px 0;
+
+		> .row {
+			.columns:first-child {
+				align-self: center;
+			}
+		}
+
+		.img {
+			.shape-x3 {}
+
+			img {
+				width: 90%;
+			}
+		}
+
+		.trade {
+			padding: 50px;
+
+			.listLine {
+				li {
+					a {}
+
+					&.active,
+					&:hover {
+						a {}
+					}
+				}
+			}
+
+			.form {
+				.sec-one {
+					input {}
+
+					.input_x1 {}
+				}
+
+				.sec-two {
+					._amount {}
+
+					._unit {}
+				}
+
+				.sec-three {
+					ul {
+						.pv-link {}
+					}
+				}
+
+				.pv_select2 {}
+
+				input {}
+			}
+		}
+	}
+}
+@media (max-width:1023px) {
+	.box-content-x3 {
+		margin: 0 0 140px;
+		padding: 40px 15px 0;
+
+		> .row {
+			.columns:first-child {
+				display: none;
+			}
+		}
+
+		.img {
+			.shape-x3 {}
+
+			img {
+				width: 90%;
+			}
+		}
+
+		.trade {
+			margin-top: 50px;
+
+			.listLine {
+				li {
+					a {}
+
+					&.active,
+					&:hover {
+						a {}
+					}
+				}
+			}
+
+			.form {
+				.sec-one {
+					input {}
+
+					.input_x1 {}
+				}
+
+				.sec-two {
+					._amount {}
+
+					._unit {}
+				}
+
+				.sec-three {
+					ul {
+						.pv-link {}
+					}
+				}
+
+				.pv_select2 {}
+
+				input {}
+			}
+		}
+	}
+}
+@media (max-width:767px) {
+	.box-content-x3 {
+		background: none;
+		margin: 0 0 34px;
+
+		> .row {
+			.columns:first-child {
+				display: none;
+			}
+		}
+
+		.trade {
+			max-width: 500px;
+			margin: 50px auto;
+
+			.listLine {
+				li {
+					a {}
+
+					&.active,
+					&:hover {
+						a {}
+					}
+				}
+			}
+
+			.form {
+				.sec-one {
+					input {}
+
+					.input_x1 {}
+				}
+
+				.sec-two {
+					._amount {}
+
+					._unit {}
+				}
+
+				.sec-three {
+					ul {
+						.pv-link {}
+					}
+				}
+
+				.pv_select2 {}
+
+				input {}
+			}
+		}
+	}
+}
+@media (max-width:639px) {
+	.box-content-x3 {
+		> .row {
+			.columns {
+				padding: 0;
+			}
+		}
+
+		.trade {
+			padding: 53px 13px 5px;
+
+			.listLine {
+				li {
+					a {}
+
+					&.active,
+					&:hover {
+						border-bottom-width: 3px;
+
+						a {}
+					}
+				}
+			}
+
+			.form {
+				.sec-one {
+					.pv_select2 > img {
+						width: 28px;
+					}
+
+					input {}
+
+					.input_x1 {}
+				}
+
+				.sec-two {
+					._amount {
+						height: 50px;
+					}
+
+					._unit {
+						height: 50px;
+					}
+				}
+
+				.sec-three {
+					ul {
+						flex-direction: column-reverse;
+						align-items: center;
+
+						li {
+							width: 100%;
+							margin-bottom: 17px;
+							text-align: center;
+
+							a {
+								width: 100% !important;
+							}
+						}
+
+						.pv-link {}
+					}
+				}
+
+				.pv_select2 {}
+
+				input {
+					height: 50px;
+				}
+			}
+		}
+	}
+}
+@media (max-width:330px) {
+	.box-content-x3 {
+		> .row {
+			.columns {}
+		}
+
+		.trade {
+			.listLine {
+				li {
+					a {}
+
+					&.active,
+					&:hover {
+						a {}
+					}
+				}
+			}
+
+			.form {
+				.sec-one {
+					input {}
+
+					.input_x1 {}
+				}
+
+				.sec-two {
+					._amount {}
+
+					._unit {
+						width: 54%;
+						justify-content: flex-end;
+						padding-left: 16px;
+					}
+				}
+
+				.sec-three {
+					ul {
+						li {
+							a {}
+						}
+
+						.pv-link {}
+					}
+				}
+
+				.pv_select2 {}
+
+				input {}
+			}
+		}
+	}
+}

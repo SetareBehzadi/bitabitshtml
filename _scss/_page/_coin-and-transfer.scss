@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: auth                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+.content_x1 {
+	h6 {
+		color: #005964;
+		font-weight: normal;
+		font-size: 16px;
+		padding-bottom: 26px;
+		&._border_b {
+			border-bottom: 1px solid #BEBEBE;
+		}
+	}
+	._w_x2 {
+		width: 150px;
+		display: block;
+	}
+}
+
+._width_x2 {
+	max-width: 908px;
+	width: 100%;
+	margin: auto;
+}
+
+._width_x3 {
+	max-width: 730px;
+	margin: auto auto auto 0;
+	width: 100%;
+}
+
+@media (max-width:1023px) {
+
+}
+
+
+@media (max-width:639px) {
+
+}

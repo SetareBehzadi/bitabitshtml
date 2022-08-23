@@ -1,0 +1,39 @@
+.list_x1 {
+	padding: 20px;
+	li {
+		position: relative;
+		color: #3E4851;
+		&:before {
+			content: "\e9a7";
+			color: #fb0458;
+			position: absolute;
+			bottom: 0;
+    	right: -12px;
+			font-size: 5px;
+			top: 8px;
+			font-family: 'icomoon' !important;
+			speak: never;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+}
+
+.list_x2 {
+	line-height: 29px;
+	li {
+		display: flex;
+
+		> span {
+			margin-left: 10px;
+			margin-top: 8px;
+		}
+	}
+}
+
+// ----------------------------------------------------------------------------------------------

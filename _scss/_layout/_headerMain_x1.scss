@@ -1,0 +1,403 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                      HEADER MAIN:  X1                                      */
+/* ------------------------------------------------------------------------------------------ */
+
+// VARIABLE LIST:
+// $headerMain_x1_height
+
+.headerMain_x1 {
+
+	display: none;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	height: $headerMain_x1_height;
+	position: relative;
+
+	._logo {
+		display: block;
+		img {
+			display: block;
+			height: 37px;
+		}
+	}
+
+	._menu {
+		&[data-menu="horizontal"] {
+			ul {
+				li {
+					a {
+						span {}
+					}
+				}
+			}
+			> ul {
+				position: static;
+
+				> li {
+					> a {
+						> i {
+							margin: 18px 0;
+							background-color: transparentize($primaryEnColor, .85);
+							border-radius: 5px;
+							font-size: 20px;
+						}
+						> span {
+							color: $primaryEnColor;
+						}
+					}
+					&._parent {
+						> a {
+							&:before {
+								color: $primaryEnColor;
+							}
+						}
+					}
+					&._active,
+					&:hover {
+						> a {
+							> span {}
+						}
+						&._parent {
+							> a {
+								&:before {}
+							}
+						}
+					}
+				}
+				> ._parent {
+					> .level_n {}
+				}
+			}
+			._mega {
+				._megaWrapper {
+					width: 100%;
+					min-width: 100%;
+
+					> ul {
+						min-height: 430px;
+
+						> li {
+							&:not(._parent) {
+								a {
+									img {}
+								}
+							}
+						}
+					}
+				}
+				._parent {
+					> a {
+						> span {}
+					}
+					> ul {
+						> li {
+							&:before {}
+							&:last-child {}
+							> a {
+								> span {}
+								&:hover {}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	._phone {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: center;
+		line-height: 30px;
+		color: $primaryEnColor;
+
+		> i,
+		img {
+			width: 30px;
+			height: 30px;
+			padding: 5px;
+			background: $primaryColor;
+			border-radius: 5px;
+			font-size: 20px;
+		}
+		span {}
+		._code {
+			padding: 0 5px;
+			color: $secondaryColor;
+		}
+	}
+
+	._auth {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-#{$opposite-side}: 10px;
+			padding-#{$opposite-side}: 10px;
+			border-#{$opposite-side}: 1px solid $primaryEnColor;
+			font-size: 14px;
+			line-height: 20px;
+			color: $primaryEnColor;
+			i,
+			img {
+				display: block;
+				margin-#{$opposite-side}: 7px;
+			}
+			span {}
+			&:last-child {
+				margin-#{$opposite-side}: 0;
+				padding-#{$opposite-side}: 0;
+				border-#{$opposite-side}: medium none;
+			}
+		}
+	}
+
+	._mobile_menu_toggle {
+		display: none;
+	}
+
+	&._darkMode {
+		padding-#{$default-side}: 20px;
+		padding-#{$opposite-side}: 20px;
+		background-color: $shadowColor;
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		padding: 0 20px;
+		background-color: transparentize($shadowColor, .55);
+		._logo {
+			img {
+				max-width: 50vw;
+			}
+		}
+		._menu,
+		._auth,
+		._phone {
+			@include hidden;
+		}
+		._mobile_menu_toggle {
+			display: block;
+			color: $primaryEnColor;
+			i {
+				display: block;
+				font-size: 30px;
+			}
+		}
+	}
+	// END VIEWPORT
+
+}
+
+
+.headerMain_x2 {
+
+	display: none;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	height: $headerMain_x1_height;
+	position: relative;
+
+	._logo {
+		display: block;
+		img {
+			display: block;
+			height: 37px;
+		}
+	}
+
+	._menu {
+		&[data-menu="horizontal"] {
+			ul {
+				li {
+					a {
+						span {}
+					}
+				}
+			}
+			> ul {
+				position: static;
+
+				> li {
+					> a {
+						> i {
+							margin: 18px 0;
+							background-color: transparentize($primaryEnColor, .85);
+							border-radius: 5px;
+							font-size: 20px;
+						}
+						> span {
+							color: $primaryEnColor;
+						}
+					}
+					&._parent {
+						> a {
+							&:before {
+								color: $primaryEnColor;
+							}
+						}
+					}
+					&._active,
+					&:hover {
+						> a {
+							> span {}
+						}
+						&._parent {
+							> a {
+								&:before {}
+							}
+						}
+					}
+				}
+				> ._parent {
+					> .level_n {}
+				}
+			}
+			._mega {
+				._megaWrapper {
+					width: 100%;
+					min-width: 100%;
+
+					> ul {
+						min-height: 430px;
+
+						> li {
+							&:not(._parent) {
+								a {
+									img {}
+								}
+							}
+						}
+					}
+				}
+				._parent {
+					> a {
+						> span {}
+					}
+					> ul {
+						> li {
+							&:before {}
+							&:last-child {}
+							> a {
+								> span {}
+								&:hover {}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	._phone {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: center;
+		line-height: 30px;
+		color: $primaryEnColor;
+
+		> i,
+		img {
+			width: 30px;
+			height: 30px;
+			padding: 5px;
+			background: $primaryColor;
+			border-radius: 5px;
+			font-size: 20px;
+		}
+		span {}
+		._code {
+			padding: 0 5px;
+			color: $secondaryColor;
+		}
+	}
+
+	._auth {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-#{$opposite-side}: 10px;
+			padding-#{$opposite-side}: 10px;
+			border-#{$opposite-side}: 1px solid $primaryEnColor;
+			font-size: 14px;
+			line-height: 20px;
+			color: $primaryEnColor;
+			i,
+			img {
+				display: block;
+				margin-#{$opposite-side}: 7px;
+			}
+			span {}
+			&:last-child {
+				margin-#{$opposite-side}: 0;
+				padding-#{$opposite-side}: 0;
+				border-#{$opposite-side}: medium none;
+			}
+		}
+	}
+
+	._mobile_menu_toggle {
+		display: none;
+	}
+
+	&._darkMode {
+		padding-#{$default-side}: 20px;
+		padding-#{$opposite-side}: 20px;
+		background-color: $shadowColor;
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		padding: 0 20px;
+		background-color: transparentize($shadowColor, .55);
+		._logo {
+			img {
+				max-width: 50vw;
+			}
+		}
+		._menu,
+		._auth,
+		._phone {
+			@include hidden;
+		}
+		._mobile_menu_toggle {
+			display: block;
+			color: $primaryEnColor;
+			i {
+				display: block;
+				font-size: 30px;
+			}
+		}
+	}
+	// END VIEWPORT
+
+}
+/* ------------------------------------   EVENT:  LOAD   ------------------------------------ */
+body._load {
+
+	.headerMain_x1 {
+		display: flex;
+	}
+
+	.headerMain_x2 {
+		display: flex;
+	}
+
+}

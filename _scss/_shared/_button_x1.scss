@@ -1,0 +1,338 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         BUTTON: X1                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-button="x1"] {
+
+
+/* --------------------------------------    GENERAL   -------------------------------------- */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	margin: 0;
+	padding-#{$opposite-side}: 20px;
+	padding-#{$default-side}: 20px;
+	background-color: lighten($txtBodyColor, 45.45);
+	border-radius: 4px;
+	// transform: perspective(1px) translate3d(0,0,0);
+	transition: background .3s ease 0s, color .3s ease 0s, box-shadow .3s ease 0s;
+	font-family: "Regular";
+	color: $txtBodyColor;
+	cursor: pointer;
+	overflow: hidden;
+
+	> * {
+		margin-#{$opposite-side}: 10px;
+		line-height: 35px;
+		white-space: nowrap;
+		&:last-child {
+			margin-#{$opposite-side}: 0 !important;
+		}
+	}
+
+	._icon,
+	._text {
+		font-size: 15px;
+	}
+
+	&:hover,
+	&:focus {
+		// background-color: lighten($txtBodyColor, 35.35);
+	}
+
+
+/* --------------------------------------    UTILITY   -------------------------------------- */
+	&._full {
+		width: 100%;
+	}
+
+	&._3D {
+		box-shadow: 0 1px 1px 0 transparentize($shadowColor, .9),
+			0 0 1px 0 transparentize($shadowColor, .86),
+			0px 1px 1px -1px transparentize($shadowColor, .88);
+		&:hover,
+		&:focus {
+			box-shadow: 0 3px 6px 0 transparentize($shadowColor, .8),
+				0 0 2px 0 transparentize($shadowColor, .86),
+				0px 3px 1px -2px transparentize($shadowColor, .88);
+		}
+	}
+
+	&._shadow {
+		box-shadow: 0 0 8px 0 transparentize($secondaryColor, .6),
+			0 0 2px 0 transparentize($secondaryColor, .93),
+			0px 3px 1px -2px transparentize($secondaryColor, .94);
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 12px 0 transparentize($secondaryColor, .2),
+				0 0 3px 0 transparentize($secondaryColor, .86),
+				0px 3px 1px -2px transparentize($secondaryColor, .88);
+		}
+	}
+
+	&._shadow_2 {
+		box-shadow: 0 3px 6px 0 transparentize($shadowColor, .84);
+		&:hover,
+		&:focus {
+			box-shadow: 0 1px 2px 0 transparentize($shadowColor, .84);
+		}
+	}
+
+
+/* --------------------------------------     SIZE     -------------------------------------- */
+	&._xs {
+		padding-#{$opposite-side}: 14px;
+		padding-#{$default-side}: 14px;
+		> * {
+			margin-#{$opposite-side}: 7px;
+			line-height: 25px;
+		}
+		._icon,
+		._text {
+			font-size: 12px;
+		}
+	}
+	&._s {
+		padding-#{$opposite-side}: 17px;
+		padding-#{$default-side}: 17px;
+		> * {
+			margin-#{$opposite-side}: 8px;
+			line-height: 30px;
+		}
+		._icon,
+		._text {
+			font-size: 13px;
+		}
+	}
+	&._m {
+		padding-#{$opposite-side}: 22px;
+		padding-#{$default-side}: 22px;
+		> * {
+			margin-#{$opposite-side}: 11px;
+			line-height: 40px;
+		}
+		._icon,
+		._text {
+			font-size: 17px;
+		}
+	}
+	&._l {
+		padding-#{$opposite-side}: 25px;
+		padding-#{$default-side}: 25px;
+		> * {
+			margin-#{$opposite-side}: 13px;
+			line-height: 45px;
+		}
+		._icon,
+		._text {
+			font-size: 19px;
+		}
+	}
+	&._xl {
+		padding-#{$opposite-side}: 28px;
+		padding-#{$default-side}: 28px;
+		> * {
+			margin-#{$opposite-side}: 14px;
+			line-height: 50px;
+		}
+		._icon,
+		._text {
+			font-size: 20px;
+		}
+	}
+
+
+/* --------------------------------------  SCHEME: x1  -------------------------------------- */
+	@mixin colorPalette($name, $color1, $lightMode) {
+		&.#{$name} {
+			background-color: $color1;
+			color: if($lightMode, $txtHeaderColor, $primaryEnColor);
+			&:hover,
+			&:focus {
+				// background-color: darken($color1, 10.10);
+			}
+		}
+	}
+
+	@include colorPalette("_primary", $primaryColor, false);
+	@include colorPalette("_secondary", $secondaryColor, true);
+	@include colorPalette("_third", $thirdColor, false);
+	@include colorPalette("_info", $infoColor, false);
+	@include colorPalette("_success", $successColor, false);
+	@include colorPalette("_warning", $warningColor, false);
+	@include colorPalette("_error", $errorColor, false);
+	@include colorPalette("_white", $primaryEnColor, true);
+
+
+/* --------------------------------------  SCHEME: x2  -------------------------------------- */
+	&._glass {
+		background-color: transparentize($txtBodyColor, .9);
+		color: darken($txtBodyColor, 5);
+		&:hover,
+		&:focus {
+			background-color: transparentize($txtBodyColor, .75);
+			color: darken($txtBodyColor, 10);
+		}
+		@mixin glassSchema($name, $color1) {
+			&.#{$name} {
+				background-color: transparentize($color1, .9);
+				color: darken($color1, 5);
+				&:hover,
+				&:focus {
+					background-color: transparentize($color1, .75);
+					color: darken($color1, 10);
+				}
+			}
+		}
+		@include glassSchema("_primary", $primaryColor);
+		@include glassSchema("_secondary", $secondaryColor);
+		@include glassSchema("_third", $thirdColor);
+		@include glassSchema("_info", $infoColor);
+		@include glassSchema("_success", $successColor);
+		@include glassSchema("_warning", $warningColor);
+		@include glassSchema("_error", $errorColor);
+		@include glassSchema("_white", $primaryEnColor);
+	}
+
+
+/* --------------------------------------  SCHEME: x3  -------------------------------------- */
+	&._border {
+		padding-#{$opposite-side}: 19px;
+		padding-#{$default-side}: 19px;
+		background-color: $primaryEnColor;
+		border: 1px solid lighten($txtBodyColor, 45.45);
+		color: darken($txtBodyColor, 5);
+		> * {
+			line-height: 33px;
+		}
+		&._xs {
+			padding-#{$opposite-side}: 13px;
+			padding-#{$default-side}: 13px;
+			> * { line-height: 23px; }
+		}
+		&._s {
+			padding-#{$opposite-side}: 16px;
+			padding-#{$default-side}: 16px;
+			> * { line-height: 28px; }
+		}
+		&._m {
+			padding-#{$opposite-side}: 21px;
+			padding-#{$default-side}: 21px;
+			> * { line-height: 38px; }
+		}
+		&._l {
+			padding-#{$opposite-side}: 24px;
+			padding-#{$default-side}: 24px;
+			> * { line-height: 43px; }
+		}
+		&._xl {
+			padding-#{$opposite-side}: 27px;
+			padding-#{$default-side}: 27px;
+			> * { line-height: 48px; }
+		}
+		&:hover,
+		&:focus {
+			background-color: transparentize($txtBodyColor, .9);
+		}
+		@mixin borderSchema($name, $color1) {
+			&.#{$name} {
+				background-color: $primaryEnColor;
+				border-color: $color1;
+				color: darken($color1, 5);
+				&:hover,
+				&:focus {
+					background-color: transparentize($color1, .9);
+				}
+			}
+		}
+		@include borderSchema("_primary", $primaryColor);
+		@include borderSchema("_secondary", $secondaryColor);
+		@include borderSchema("_third", $thirdColor);
+		@include borderSchema("_info", $infoColor);
+		@include borderSchema("_success", $successColor);
+		@include borderSchema("_warning", $warningColor);
+		@include borderSchema("_error", $errorColor);
+		@include borderSchema("_white", $primaryEnColor);
+	}
+
+
+/* --------------------------------------   BALANCED   -------------------------------------- */
+	&._balanced {
+		padding-#{$opposite-side}: 10px;
+		padding-#{$default-side}: 10px;
+		._icon,
+		._text {
+			font-size: 12px;
+		}
+		&._xs {
+			padding-#{$opposite-side}: 7px;
+			padding-#{$default-side}: 7px;
+			._icon,
+			._text {
+				font-size: 10px;
+			}
+		}
+		&._s {
+			padding-#{$opposite-side}: 8px;
+			padding-#{$default-side}: 8px;
+			._icon,
+			._text {
+				font-size: 11px;
+			}
+		}
+		&._m {
+			padding-#{$opposite-side}: 11px;
+			padding-#{$default-side}: 11px;
+			._icon,
+			._text {
+				font-size: 14px;
+			}
+		}
+		&._l {
+			padding-#{$opposite-side}: 13px;
+			padding-#{$default-side}: 13px;
+			._icon,
+			._text {
+				font-size: 16px;
+			}
+		}
+		&._xl {
+			padding-#{$opposite-side}: 14px;
+			padding-#{$default-side}: 14px;
+			._icon,
+			._text {
+				font-size: 17px;
+			}
+		}
+	}
+
+
+/* --------------------------------------    DISABLE   -------------------------------------- */
+	&._disable {
+		background-color: lighten($txtBodyColor, 58.24);
+		color: $txtBodyColor;
+		opacity: .8;
+		-webkit-touch-callout: none;
+		@include noSelect;
+		pointer-events: none;
+		&._border {
+			border-color: lighten($txtBodyColor, 28.12);
+		}
+	}
+
+
+}/* END [data-button="x1"] */
+
+
+/* ------------------------------- BUTTON WITH OTHER ELEMENTS ------------------------------- */
+b[data-button],
+i[data-button],
+del[data-button],
+dfn[data-button],
+ins[data-button],
+span[data-button] {
+	cursor: default;
+}

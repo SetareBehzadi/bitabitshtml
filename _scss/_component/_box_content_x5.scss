@@ -1,0 +1,114 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  X1                                          */
+/* ------------------------------------------------------------------------------------------ */
+.box-content-x5 {
+	background-color: #FBF5E5;
+	padding: 63px 0 43px 0;
+
+	._container {
+		max-width: 1192px !important;
+		margin: auto;
+	}
+	._title {
+		text-align: center;
+		h2 {
+			color: #01373E;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 50%;
+				width: 70px;
+				height: 2px;
+				background-color: $thirdColor;
+				display: inline-block;
+				transform: translate(50%, 88px);
+			}
+		}
+		h4 {
+			color: #EBE4CF;
+			font-size: 55px;
+			font-family: 'Bold';
+			margin-top: -34px;
+			letter-spacing: -4px;
+		}
+		p {
+			text-align: center;
+			margin-bottom: 0;
+			margin-top: -16px;
+		}
+	}
+	._box {
+		margin-top: 47px;
+		border: 1px solid #F6E6CB;
+		background-color: #fcfcfc;
+		border-radius: 15px;
+    padding: 52px 23px 15px;
+	}
+	.icon {
+		display: table;
+		font-size: 79px;
+		margin: auto;
+	}
+	h4 {
+		font-size: 18px;
+		color: #005964;
+		text-align: center;
+    padding: 10px 0 0px 0;
+	}
+	p {
+	    font-size: 12px;
+	    line-height: 22px;
+	    margin-bottom: 7px;
+	    // letter-spacing: -0.6px;
+	}
+	._action {
+		text-align: center;
+		a {
+			color: $thirdColor;
+			font-size: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 0;
+			transition: all 0.3s;
+			padding-bottom: 2px;
+		 span {
+			 transform: rotatez(
+			-90deg);
+			display: block;
+			margin: 0 5px;
+			&:before {
+				color: $thirdColor;
+			}
+		 }
+		 &:hover {
+			 transform: translate(-10px, 0);
+		 }
+		}
+	}
+}
+
+@media (max-width:1119px) {
+	.box-content-x5 {
+			h4 {
+				 font-size: 16px;
+			}
+	}
+}
+
+@media (max-width:1023px) {
+	.box-content-x5 {
+		.row {
+			padding: 0 61px;
+		}
+	}
+}
+@media (max-width:767px) {
+	.box-content-x5 {
+		.row {
+			padding: 0 8px;
+		}
+	}
+}

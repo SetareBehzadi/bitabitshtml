@@ -1,0 +1,45 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                       PAGINATION: X1                                       */
+/* ------------------------------------------------------------------------------------------ */
+.pagination_x3 {
+	.pagination {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 19px;
+
+		li {
+			width: 33px;
+			height: 34px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14pxpx;
+			margin: 0 3px;
+			background-color: #F2F6FB;
+			border-radius: 8px;
+			color: #6E748E;
+
+			a {
+				display: flex;
+				width: 100%;
+				height: 100%;
+				color: #6E748E;
+				border-radius: 8px;
+				justify-content: center;
+				align-items: center;
+			}
+
+			&.active {
+				background-color: #01beea;
+
+				span {
+					color: #fff;
+				}
+			}
+			&:first-child , &:last-child {
+				background-color: #02C076;
+			}
+		}
+	}
+}

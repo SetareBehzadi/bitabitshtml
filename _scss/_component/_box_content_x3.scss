@@ -1,0 +1,186 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  TABLE                                          */
+/* ------------------------------------------------------------------------------------------ */
+.box-content-x3 {
+	background-image: url("../media/cp-img/back-new.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 30px 15px 30px;
+	position: relative;
+
+	._container {
+		max-width: 1170px !important;
+    margin: auto;
+	}
+
+	.row {
+		@include box-shadow-six;
+    padding: 30px 30px 10px 30px;
+		border-radius: 15px;
+		margin: 50px auto;
+		overflow: hidden;
+		background-color: #fff;
+	}
+
+	.table-scroll {
+		width: 100%;
+
+		&::-webkit-scrollbar {
+			width: 3px;
+			height: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: $secondaryColor;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: $secondaryColor;
+		}
+	}
+
+	table {
+		min-width: 1023px;
+		width: 100%;
+
+		thead {
+			    border-bottom: 1px solid #495057;
+			th {
+				font-family: "Regular";
+				font-size: 16px;
+				font-weight: 100;
+			}
+		}
+		tbody {
+			tr {
+				border-bottom: 1px solid #BEBEBE !important;
+				td {
+					font-size: 18px;
+				}
+				td:first-child {
+					display: flex;
+					padding: 12px 10px 12px 0;
+					align-items: center;
+
+					.name {
+						min-width: 55px;
+						text-align: center;
+
+						&._fa {
+							text-align: initial;
+							font-size: 16px;
+							color: #BEBEBE;
+						}
+					}
+				}
+				// &._more {
+				// 	border-bottom: none !important;
+				// 	td:first-child {
+				// 		 display: revert;
+				// 	 }
+				// 	 a {
+				// 		 	 color: #005964;
+				// 			 font-size: 14px;
+				// 			 display: flex;
+				// 			 align-items: center;
+				// 			 justify-content: center;
+				// 			 padding-bottom: 0;
+				// 			 padding-top: 20px;
+				// 	 }
+				// 	 .icon-pv-icons-ar {
+				// 		 transform: rotatez(
+				// 			-90deg);
+				// 			display: block;
+				// 			margin: 0 5px;
+				// 		 &:before {
+				// 			 color: #005964;
+				// 		 }
+				// 	 }
+				// }
+			}
+		}
+
+		._logo_coin {
+			img {
+					width: 38px;
+					object-fit: cover;
+			}
+
+		}
+
+		.action {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+
+	._more {
+		a {
+				color: #005964;
+				font-size: 14px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-bottom: 0;
+		}
+		.icon-pv-icons-ar {
+			transform: rotatez(
+			 -90deg);
+			 display: block;
+			 margin: 0 5px;
+			&:before {
+				color: #005964;
+			}
+		}
+	}
+}
+@media (max-width:1023px) {
+	.box-content-x2 {
+		margin: 78px 0;
+
+		.row {}
+
+		._obs-img {
+			width: 106px;
+
+			&._x1 {}
+		}
+	}
+}
+@media (max-width:767px) {
+	.box-content-x2 {
+		margin: 0;
+		padding: 99px 15px 30px;
+		background-position: center;
+
+		.row {}
+
+		._obs-img {
+			display: none;
+
+			&._x1 {
+				display: block;
+			}
+		}
+
+		.table-scroll {}
+
+		table {
+			tbody {
+				tr {
+					td:first-child {
+						.name {
+							&._fa {}
+						}
+					}
+				}
+			}
+
+			.action {}
+		}
+	}
+}

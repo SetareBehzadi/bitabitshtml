@@ -1,0 +1,106 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                   MAIN MENU:  HORIZONTAL PROFILE                                   */
+/* ------------------------------------------------------------------------------------------ */
+
+#off_canvas_left {
+	width: 499px;
+	background-color: #6893EE;
+	margin-top: 79px;
+	padding: 18px 36px 100px;
+
+	&._content {
+		// padding: 18px 36px;
+	}
+
+	.user_info {
+		margin-bottom: 18px;
+	}
+
+	._height-100 {
+		height: 100px;
+		padding: 7px 16px;
+	}
+
+	._title {
+		background-color: #ffffff2e;
+		@include box-shadow-fore;
+		border-radius: 8px;
+		height: 53px;
+		display: flex;
+		align-items: center;
+		color: #fff;
+		margin-bottom: 18px;
+
+		svg {
+			margin: 12px;
+			cursor: pointer;
+		}
+	}
+
+	li {
+		> span {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	[class^=icon-] {
+		background: #ecf2fd;
+		padding: 11px;
+		border-radius: 5px;
+		margin: 0 0 0 15px;
+		float: right;
+
+		&.icon-card-p {
+			background-color: transparent;
+		}
+
+		&.icon-email-p {
+			display: flex;
+			float: right;
+			padding: 11.6px 11.9px;
+
+			&:before {
+				font-size: 21px;
+			}
+		}
+
+		&.icon-smartphone-p {
+			padding: 8.8px 8.5px;
+
+			&:before {
+				font-size: 27px;
+			}
+		}
+
+		&.icon-resume-and-cv {
+			padding: 9.6px 9.5px;
+
+			&:before {
+				font-size: 25px;
+			}
+		}
+
+		&.icon-lock {
+			padding: 11px 13.8px;
+
+			&:before {
+				font-size: 23px;
+			}
+		}
+
+		&.icon-moon {
+			padding: 11.2px 11px;
+
+			&:before {
+				font-size: 22px;
+			}
+		}
+	}
+}
+@media (max-width:639px) {
+	#off_canvas_left {
+		width: 100%;
+		padding: 18px 7px 100px;
+	}
+}

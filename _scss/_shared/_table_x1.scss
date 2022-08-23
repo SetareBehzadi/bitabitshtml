@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         table                                        */
+/* ------------------------------------------------------------------------------------------ */
+table {
+	text-align: center;
+
+	tfoot td,
+	tfoot th,
+	thead td,
+	thead th {
+		text-align: center;
+	}
+
+	thead {
+		background: $transparent;
+		border: none;
+		border-bottom: 1px solid #f1f1f1;
+	}
+
+	tr:nth-child(even) {
+		background-color: $transparent;
+	}
+
+	tbody {
+		border: none;
+
+		tr {
+			border-bottom: 1px solid #f1f1f1 !important;
+		}
+	}
+}

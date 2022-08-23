@@ -1,0 +1,53 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                          BOX:  TABLE                                          */
+/* ------------------------------------------------------------------------------------------ */
+.box-content-x6 {
+	padding-top: 138px;
+	._container {
+		max-width: 1196px !important;
+    margin: auto;
+	}
+	._title {
+		text-align: center;
+    margin-bottom: 31px;
+		h2 {
+			color: #01373E;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 50%;
+				width: 70px;
+				height: 2px;
+				background-color: $thirdColor;
+				display: inline-block;
+				transform: translate(50%, 40px);
+			}
+		}
+		h4 {
+			color: #F1F1F1;
+			font-size: 55px;
+			font-family: 'Bold';
+			margin-top: -44px;
+	    letter-spacing: -5px;
+		}
+	}
+}
+
+@media (max-width:1199px) {
+	.box-content-x6 {
+
+	}
+}
+
+@media (max-width:1023px) {
+	.box-content-x6 {
+
+	}
+}
+@media (max-width:767px) {
+	.box-content-x6 {
+
+	}
+}

@@ -1,0 +1,97 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                  MIXIN:  APPEND ATTRIBUTE                                  */
+/* ------------------------------------------------------------------------------------------ */
+@mixin appendAttr($x) {
+	$sel: &;
+	$collector: ();
+	@for $i from 1 through length($sel) {
+		$s: nth($sel, $i);
+		$last: nth($s, -1);
+
+		@if str-slice($last, -1) == "]" {
+			// if is just the bare attribute with no value, $offset will be -1, otherwise it will be -2
+			$offset: -1;
+			$current-x: $x;
+
+			@if str-slice($last, -2) == '"]' {
+				// this attribute already has a value, so we need to adjust the offset
+				$offset: -2;
+			} @else {
+				// no attribute value, so add the equals and quotes
+				$current-x: '="' + $x + '"';
+			}
+			$last: str-slice($last, 1, $offset - 1) + $current-x + str-slice($last, $offset);
+			$collector: append($collector, set-nth($s, -1, $last), comma);
+		} @else {
+			// following line will append $x to your non-attribute selector
+			$collector: append($collector, selector-append($s, $x), comma);
+			// the following line will not change your non-attribute selector at all
+			//$collector: append($collector, $s, comma);
+		}
+	}
+	@at-root #{$collector} {
+		@content;
+	}
+}
+/* ------------------------------------------------------------------------------------------ */
+/*                                       MIXIN:  HIDDEN                                       */
+/* ------------------------------------------------------------------------------------------ */
+@mixin hidden {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+}
+@mixin visibleBlock {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+@mixin visibleFlex {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+@mixin noSelect {
+	-webkit-touch-callout: none;
+	user-select: none;
+	-webkit-tap-highlight-color: $transparent;
+}
+/* ------------------------------------------------------------------------------------------ */
+/*                                        MIXIN: CLEAR                                        */
+/* ------------------------------------------------------------------------------------------ */
+@mixin clearFix {
+	content: "" !important;
+	display: table !important;
+	clear: both !important;
+}
+/* ------------------------------------------------------------------------------------------ */
+/*                                        MIXIN: box-shadow                                        */
+/* ------------------------------------------------------------------------------------------ */
+@mixin box-shadow {
+	box-shadow: 0 0 6px rgba(0,0,0,0.10);
+}
+@mixin box-shadow-two {
+	box-shadow: 0 10px 20px #DCD5FF;
+}
+@mixin box-shadow-three {
+	box-shadow: 0 20px 20px #7acaff45;
+}
+@mixin box-shadow-fore {
+	box-shadow: 0 12px 30px #6893ee1a;
+}
+@mixin box-shadow-five {
+	box-shadow: 0 3px 35px #00000014;
+}
+@mixin box-shadow-six {
+	box-shadow: 0 3px 25px #00000012;
+}
+@mixin transformChildMenu {
+	-webkit-transform: translate(0, 10px);
+	transform: translate(0, 10px);
+	-webkit-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+@mixin transformChildMenuHover {
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0);
+}

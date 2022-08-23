@@ -1,0 +1,97 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                       PAGINATION: X1                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-pagination="x1"] {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+
+	> ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+
+		> li {
+			list-style: none outside;
+			min-width: 30px;
+			background-color: $primaryEnColor;
+			border-radius: 5px;
+			box-shadow: 0 3px 6px 0 transparentize($shadowColor, .84);
+			line-height: 30px;
+			text-align: center;
+			font-size: 14px;
+			color: $txtBodyColor;
+			cursor: default;
+			transition: box-shadow 0.25s linear 0s;
+
+			&:not(:last-child) {
+				margin-#{$opposite-side}: 10px;
+			}
+
+			> a {
+				display: block;
+				line-height: 30px;
+				text-align: center;
+				font-size: 14px;
+				color: $txtBodyColor;
+
+				&._noSelect {
+					@include noSelect;
+				}
+			}
+
+			&._next,
+			&._prev {
+				padding-#{$default-side}: 20px;
+				padding-#{$opposite-side}: 20px;
+				background-color: $transparent;
+				background-repeat: no-repeat;
+				box-shadow: 0 0 0 0 transparentize($shadowColor, 1);
+				color: lighten($txtBodyColor, 26.67);
+
+				a,
+				span {
+					color: lighten($txtBodyColor, 26.67);
+				}
+			}
+
+			&._prev {
+				background-image: url("../media/chevronRight.svg");
+				background-position: center $default-side;
+			}
+
+			&._next {
+				background-image: url("../media/chevronLeft.svg");
+				background-position: center $opposite-side;
+			}
+
+			&._disabled {}
+
+			&._current {
+				box-shadow: 0 3px 6px 0 transparentize($secondaryColor, 0);
+				// background-color: $secondaryColor;
+				// color: $primaryEnColor;
+			}
+
+			&._ellipsis {
+				background-color: $transparent;
+				box-shadow: 0 0 0 0 transparentize($shadowColor, 1);
+			}
+
+			&:not(._current):not(._disabled):not(._ellipsis):not(._next):not(._prev) {
+				&:hover {
+					box-shadow: 0 3px 6px 0 transparentize($secondaryColor, 0);
+					// background-color: transparentize($secondaryColor, .4);
+					a {
+						// color: $primaryEnColor;
+					}
+				}
+			}
+
+			&._noSelect {
+				@include noSelect;
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                       LIST ITEM:  X1                                       */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-list="x1"] {
+	._item {
+		display: flex;
+		flex-flow: row nowrap;
+
+		._image {
+			flex: 1 0 auto;
+			width: 76px;
+			height: 76px;
+			border: 1px solid darken($secondaryEnColor, 6.27);
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border: 7px solid $primaryEnColor;
+				object-fit: cover;
+			}
+		}
+		._content {
+			flex: 1 1 100%;
+			padding-#{$default-side}: 10px;
+			> * {
+				display: block;
+			}
+			._title {
+				height: 25px;
+				margin-bottom: 5px;
+				line-height: 25px;
+				font-family: "Bold";
+				font-size: 12px;
+				color: $secondaryColor;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			._text {
+				height: 50px;
+				line-height: 25px;
+				text-align: justify;
+				font-size: 12px;
+				color: $primaryEnColor;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			._info {
+				margin-top: 20px;
+				text-align: $opposite-side;
+				font-size: 10px;
+				color: $primaryEnColor;
+			}
+		}
+	}
+
+	&._reverse {
+		._item {
+			flex-direction: row-reverse;
+			._content {
+				padding-#{$default-side}: 0;
+				padding-#{$opposite-side}: 10px;
+			}
+		}
+	}
+
+	&._compress {
+		._item {
+			._image {
+				width: 64px;
+				height: 64px;
+				img {
+					border: 4px solid $primaryEnColor;
+				}
+			}
+			._content {
+				> * {
+					margin-bottom: 10px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+				._text {
+					height: 40px;
+					line-height: 20px;
+					font-size: 10px;
+				}
+			}
+		}
+	}
+
+	&._vertical {
+		._item {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid transparentize($primaryEnColor, .75);
+		}
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+
+	}
+	// END VIEWPORT
+
+}

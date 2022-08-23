@@ -1,0 +1,57 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         PAGE: auth                                         */
+/* ------------------------------------------------------------------------------------------ */
+.width_x1 {
+	max-width: 839px;
+	margin: auto;
+}
+
+.form_x2 {
+	label {
+		font-size: 16px;
+		color: #005964;
+	}
+	._pt_x1 {
+		  padding-top: 49px;
+	}
+	._pb_x1 {
+		  padding-bottom: 21px;
+	}
+	.list_x3 {
+		color: #F84960;
+		line-height: 30px;
+	}
+}
+
+.title_sec {
+	align-items: center;
+	justify-content: space-between;
+
+	._flex._j_between {
+		 align-items: center;
+	}
+	.pv_select {
+		   width: 204px;
+		select {
+			font-size: 12px;
+			width: 199px;
+		}
+	}
+}
+@media (max-width:1023px) {
+
+}
+
+
+@media (max-width:639px) {
+	.btn_group_x1 {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.title_sec {
+
+		._flex._j_between {
+			 display: none;
+		}
+	}
+}

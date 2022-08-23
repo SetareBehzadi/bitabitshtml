@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         OFF CANVAS                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+.off-canvas {
+	width: 85vw;
+	background-color: $primaryEnColor;
+
+	&.position-right {
+		transform: translate3d(85vw, 0, 0);
+
+		&.is-transition-overlap {
+			box-shadow: 0 0 5px 0 transparentize($shadowColor, .87);
+			z-index: 99999;
+		}
+	}
+
+	&.position-left {
+		transform: translate3d(-85vw, 0, 0);
+
+		&.is-transition-overlap {
+			box-shadow: 0 0 5px 0 transparentize($shadowColor, .87);
+			z-index: 99999;
+		}
+	}
+
+	&.is-open {
+		transform: translate3d(0, 0, 0)
+	}
+
+}
+
+.js-off-canvas-overlay {
+	background-color: transparentize($shadowColor, .65)
+}
+
+.off-canvas-content {
+	height: 100%;
+	min-height: calc( 100vh - 100px);
+}
+
+body.is-off-canvas-open {
+	overflow: hidden !important;
+}

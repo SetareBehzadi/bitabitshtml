@@ -1,0 +1,220 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                    MAIN MENU:  VERTICAL                                    */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-menu="vertical"] {
+
+	/* ------------------------------------    GENERAL   ------------------------------------ */
+	display: flex;
+	flex-grow: 1;
+
+	ul {
+		position: relative;
+		margin: 0;
+		padding: 0;
+
+		li {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			list-style: none outside none;
+
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: 0;
+				#{$default-side}: 0;
+				width: 100%;
+				height: 1px;
+				background-color: transparentize($shadowColor, .8);
+			}
+
+			a {
+				display: flex;
+
+				span {
+					display: flex;
+					flex-grow: 1;
+					position: relative;
+					padding: 10px;
+				}
+			}
+		}
+	}
+
+	/* ------------------------------------   LEVEL 01   ------------------------------------ */
+	> ul {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		> li {
+			// background-color: $primaryEnColor;
+			background-color: #005b74;
+
+			> a {
+				> span {
+					line-height: 40px;
+					font-family: "Bold";
+					font-size: 16px;
+					color: transparentize($shadowColor, .3);
+				}
+			}
+
+			&._parent {
+				> a {
+					> span {
+						padding-#{$opposite-side}: 30px;
+
+						&:before {
+							content: "\e916";
+							position: absolute;
+							top: 0;
+							#{$opposite-side}: 0;
+							width: 30px;
+							height: 60px;
+							line-height: 60px;
+							font-family: "icomoon";
+							font-size: 16px;
+							color: transparentize($shadowColor, .3);
+							z-index: 999;
+						}
+					}
+				}
+				&._open {
+					> a {
+						> span {
+							&:before {
+								content: "\e917";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* ------------------------------------     BASIC    ------------------------------------ */
+	._basic {
+		.level_n {
+			display: none;
+
+			> li {
+				background-color: transparentize($shadowColor, .8);
+
+				> a {
+					> span {
+						line-height: 40px;
+						font-family: "Regular";
+						font-size: 14px;
+						color: transparentize($shadowColor, .3);
+					}
+				}
+
+				&._parent {
+					padding-#{$opposite-side}: 0;
+
+					> a {
+						> span {
+							padding-#{$opposite-side}: 30px;
+
+							&:before {
+								content: "\e916";
+								position: absolute;
+								top: 0;
+								#{$opposite-side}: 0;
+								width: 30px;
+								height: 60px;
+								line-height: 60px;
+								font-family: "icomoon";
+								font-size: 16px;
+								color: transparentize($shadowColor, .3);
+								z-index: 999;
+							}
+						}
+					}
+					&._open {
+						> a {
+							> span {
+								&:before {
+									content: "\e917";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* --------------------------------------     MEGA     -------------------------------------- */
+	._mega {
+		> ul {
+			display: none;
+
+			> li {
+				background-color: transparentize($shadowColor, .8);
+
+				> a {
+					> span {
+						line-height: 40px;
+						font-family: "Regular";
+						font-size: 14px;
+						color: transparentize($shadowColor, .3);
+					}
+				}
+
+				&:not(._parent) {
+					@include hidden;
+				}
+
+				&._parent {
+					padding-#{$opposite-side}: 0;
+
+					> a {
+						> span {
+							padding-#{$opposite-side}: 30px;
+
+							&:before {
+								content: "\e916";
+								position: absolute;
+								top: 0;
+								#{$opposite-side}: 0;
+								width: 30px;
+								height: 60px;
+								line-height: 60px;
+								font-family: "icomoon";
+								font-size: 16px;
+								color: transparentize($shadowColor, .3);
+								z-index: 999;
+							}
+						}
+					}
+					ul {
+						li {
+							background-color: transparentize($shadowColor, .8);
+							a {
+								span {
+									line-height: 40px;
+									font-family: "Regular";
+									font-size: 14px;
+									color: transparentize($shadowColor, .3);
+								}
+							}
+						}
+					}
+					&._open {
+						> a {
+							> span {
+								&:before {
+									content: "\e917";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

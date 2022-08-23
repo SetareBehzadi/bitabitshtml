@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                      OWL CAROUSEL: X1                                      */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-owlcarousel="x1"] {
+	.owl-stage-outer {
+		z-index: 2;
+
+		.owl-stage {
+			.owl-item {}
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: 0;
+		#{$default-side}: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		z-index: 1;
+
+		.owl-next,
+		.owl-prev {
+			display: block;
+			position: absolute;
+			top: 15px;
+			margin: 0;
+			padding: 0;
+			i {
+				display: block;
+				font-size: 30px;
+				color: $primaryEnColor;
+			}
+			&:hover {
+				background-color: $transparent;
+			}
+		}
+
+		.owl-prev {
+			#{$opposite-side}: -100px;
+			i {}
+		}
+
+		.owl-next {
+			#{$default-side}: -100px;
+			i {}
+		}
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                      OWL CAROUSEL: X2                                      */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-owlcarousel="x2"] {
+	.owl-stage-outer {
+		z-index: 2;
+
+		.owl-stage {
+			.owl-item {}
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: calc( 50% - 20px );
+		#{$default-side}: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		z-index: 1;
+
+		.owl-next,
+		.owl-prev {
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin: 0;
+			padding: 0;
+			i {
+				display: block;
+				font-size: 20px;
+				color: $primaryEnColor;
+			}
+			&:hover {
+				background-color: $transparent;
+			}
+		}
+
+		.owl-prev {
+			#{$opposite-side}: -12px;
+			i {}
+		}
+
+		.owl-next {
+			#{$default-side}: -12px;
+			i {}
+		}
+	}
+
+	.owl-dots {
+		display: flex;
+		flex-flow: row-reverse nowrap;
+		align-items: center;
+		justify-content: center;
+		margin-top: 40px;
+
+		.owl-dot {
+			display: block;
+			span {
+				display: block;
+				width: 15px;
+				height: 5px;
+				background-color: #DFDFDF;
+				border-radius: 5px;
+				transition: width .5s ease 0s, background .5s ease 0s;
+			}
+			&.active {
+				span {
+					width: 30px;
+					background-color: $secondaryColor;
+				}
+			}
+		}
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                      OWL CAROUSEL: X3                                      */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-owlcarousel="x3"] {
+	padding: 20px;
+	background-color: #E4F3F0;
+	border-radius: 8px;
+
+	.owl-stage-outer {
+		z-index: 2;
+
+		.owl-stage {
+			.owl-item {
+				> .item {
+					padding: 10px;
+				}
+			}
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: 50%;
+		#{$default-side}: 0;
+		margin: -20px 0 0;
+		padding: 0;
+		width: 100%;
+		z-index: 1;
+
+		.owl-next,
+		.owl-prev {
+			display: block;
+			position: absolute;
+			top: 0;
+			margin: 0;
+			padding: 0;
+			i {
+				display: block;
+				font-size: 40px;
+				color: #C7C7C7;
+			}
+			&:hover {
+				background-color: $transparent;
+			}
+		}
+
+		.owl-prev {
+			#{$opposite-side}: -50px;
+			i {}
+		}
+
+		.owl-next {
+			#{$default-side}: -50px;
+			i {}
+		}
+	}
+}

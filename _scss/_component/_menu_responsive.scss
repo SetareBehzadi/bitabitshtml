@@ -1,0 +1,70 @@
+.off-canvas.position-right.is-transition-overlap {
+	z-index: 9999 !important;
+}
+
+.site-menu-mobile {
+	.off-canvas {
+		// background-color: #7B5DE9;
+		background-color: #005b74;
+		padding-top: 101px;
+		max-width: 303px;
+	}
+
+	nav {
+		position: relative;
+		padding-bottom: 282px;
+		min-height: 601px;
+		height: 100%;
+
+		._bg-res {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	ul {
+		padding: 0 29px;
+		line-height: 50px;
+
+		li {
+			a {
+				color: #fff;
+				display: block;
+				padding: 0 15px;
+				// align-items: center;
+				border-bottom: 1px solid #B3A2FF;
+
+				svg {
+					margin: 0 9px 0 12px;
+				}
+			}
+
+			&._parent {
+				&:after {
+					content: "\e900";
+					color: #fff;
+					font-family: "icomoon" !important;
+					speak: never;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					text-transform: none;
+					line-height: 1;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					position: absolute;
+					left: 14px;
+					top: 26px;
+					font-size: 8px;
+					pointer-events: none;
+				}
+
+				&:hover {
+					&:after {
+						color: #ffdf85;
+					}
+				}
+			}
+		}
+	}
+}

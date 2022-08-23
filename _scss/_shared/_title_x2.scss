@@ -1,0 +1,72 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                         TITLE:  X2                                         */
+/* ------------------------------------------------------------------------------------------ */
+
+[data-title="x2"] {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	> * {
+		margin-bottom: 10px;
+		text-align: center;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	._text {
+		font-family: "Regular";
+		font-size: 18px;
+		&._light {
+			color: $primaryEnColor;
+		}
+	}
+	._summary {}
+	._icon {}
+	img {
+		width: 30px;
+		height: 30px;
+		object-fit: contain;
+	}
+	> i {
+		font-size: 30px;
+		&._secondary {
+			color: $secondaryColor;
+		}
+	}
+
+	&._cover {
+		> * {
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		._text {
+			line-height: 34px;
+			font-family: "Bold";
+			font-size: 20px;
+			color: $primaryColor;
+		}
+		._icon,
+		img {
+			width: 120px;
+			height: 120px;
+			padding: 35px;
+			background-color: $primaryColor;
+			border-radius: 20px;
+			box-shadow: 0 3px 6px 0 transparentize($secondaryColor, .3);
+			font-size: 50px;
+			overflow: hidden;
+		}
+		&._light {
+			._icon,
+			img {
+				background-color: $primaryEnColor;
+			}
+		}
+	}
+
+}

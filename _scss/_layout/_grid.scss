@@ -1,0 +1,264 @@
+/* ------------------------------------------------------------------------------------------ */
+/*                                      WRAPPER: 1170 PX                                      */
+/* ------------------------------------------------------------------------------------------ */
+.WRAP_1170 {
+
+	max-width: 1170px !important;
+	width: 100%;
+	margin-#{$default-side}: auto !important;
+	margin-#{$opposite-side}: auto !important;
+
+	> .column,
+	> .columns {}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		max-width: 100% !important;
+	}
+	// END VIEWPORT
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                      WRAPPER:  930 PX                                      */
+/* ------------------------------------------------------------------------------------------ */
+.WRAP_930 {
+
+	max-width: 930px !important;
+	width: 100%;
+	margin-#{$default-side}: auto !important;
+	margin-#{$opposite-side}: auto !important;
+
+	> .column,
+	> .columns {}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		max-width: 100% !important;
+	}
+	// END VIEWPORT
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                      WRAPPER:  840 PX                                      */
+/* ------------------------------------------------------------------------------------------ */
+.WRAP_840 {
+
+	max-width: 840px !important;
+	width: 100%;
+	margin-#{$default-side}: auto !important;
+	margin-#{$opposite-side}: auto !important;
+
+	> .column,
+	> .columns {}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		max-width: 100% !important;
+	}
+	// END VIEWPORT
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                      WRAPPER:  768 PX                                      */
+/* ------------------------------------------------------------------------------------------ */
+.WRAP_768 {
+
+	max-width: 768px !important;
+	width: 100%;
+	margin-#{$default-side}: auto !important;
+	margin-#{$opposite-side}: auto !important;
+
+	> .column,
+	> .columns {}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		max-width: 100% !important;
+	}
+	// END VIEWPORT
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                       ROWS / COLUMNS                                       */
+/* ------------------------------------------------------------------------------------------ */
+.row {
+
+	.column,
+	.columns {}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		.column,
+		.columns {
+			padding-#{$default-side}: 20px;
+			padding-#{$opposite-side}: 20px;
+		}
+		[class$="collapse"],
+		&[class$="collapse"] {
+			> .column,
+			> .columns {
+				padding-#{$default-side}: 0;
+				padding-#{$opposite-side}: 0;
+			}
+		}
+	}
+	// END VIEWPORT
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                     CUSTOMIZE GRID: X1                                     */
+/* ------------------------------------------------------------------------------------------ */
+.GRIDX1 {
+	.columns {
+		padding-bottom: 10px;
+		padding-#{$default-side}: 5px;
+		padding-#{$opposite-side}: 5px;
+		._item {
+			height: 240px;
+			max-height: 430px;
+		}
+
+		&:nth-child(1) {
+			flex: 0 0 60%;
+			._item {
+				height: 100%;
+				._content {
+					._title {
+						max-height: 70px;
+						line-height: 35px;
+						font-size: 24px;
+					}
+				}
+			}
+		}
+		&:nth-child(2) {
+			flex: 0 0 40%;
+			._item {
+				height: 100%;
+				._content {
+					._title {
+						max-height: 70px;
+						line-height: 35px;
+						font-size: 20px;
+					}
+				}
+			}
+		}
+		&:nth-child(3) {
+			flex: 0 0 30%;
+		}
+		&:nth-child(4) {
+			flex: 0 0 30%;
+		}
+		&:nth-child(5) {
+			flex: 0 0 40%;
+		}
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                     CUSTOMIZE GRID: X2                                     */
+/* ------------------------------------------------------------------------------------------ */
+.GRIDX2 {
+
+	.__main {
+		&.column,
+		&.columns {
+			flex: 0 0 65%;
+			width: 100%;
+			max-width: 65%;
+		}
+	}
+
+	.__side {
+		&.column,
+		&.columns {
+			flex: 0 0 35%;
+			width: 100%;
+			max-width: 35%;
+		}
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		.__main {
+			&.column,
+			&.columns {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		.__side {
+			&.column,
+			&.columns {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	// END VIEWPORT
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*                                     CUSTOMIZE GRID: X3                                     */
+/* ------------------------------------------------------------------------------------------ */
+.GRIDX3 {
+
+	.__main {
+		&.column,
+		&.columns {
+			flex: 0 0 calc(100% - 315px);
+			width: 100%;
+			max-width: calc(100% - 315px);
+		}
+	}
+
+	.__side {
+		&.column,
+		&.columns {
+			flex: 0 0 315px;
+			width: 100%;
+			max-width: 315px;
+		}
+	}
+
+	/* ----------------------------------   MEDIA  QUERY   ---------------------------------- */
+	// START VIEWPORT
+	@include max-screen(1024 + 17 + 'px') {
+		.__main {
+			&.column,
+			&.columns {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		.__side {
+			&.column,
+			&.columns {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	// END VIEWPORT
+
+}

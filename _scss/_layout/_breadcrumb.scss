@@ -1,0 +1,17 @@
+.breadcrumb {
+	padding: 23px;
+	.row {
+		justify-content: flex-end;
+	}
+	nav {
+		display: flex;
+		font-size: 12px;
+	 a {
+		 margin: 0 3px;
+		 &:first-child {
+			 display: flex;
+			 align-items: center;
+		 }
+	 }
+	}
+}
